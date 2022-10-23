@@ -1,14 +1,57 @@
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %} <!--Где сustom_filters — это название Python файла, который мы создали в папке simpleapp/templatetags/.-->
+
+<!-- Подключаем новый файл с нашим тегом -->
+{% load custom_tags %}
+
 <!-- Название у нас будет NEWS LIST -->
 {% block title1 %}
 News List
 {% endblock title1 %}
 
-<!-- В контенте на странице мы выводим все news -->
+
 {% block content %}
-<h1>News List </h1>
-{{ list }} <!--from view.py - context_object_name = 'list'-->
-<p>list: {{ list.content }}</p>
+   <h1>News List</h1>
+   <!-- Вот так выглядело использование переменной и фильтра -->
+    <h3>{{ time_now|date:'M d Y l' }}</h3>
+   <!-- А вот так мы используем наш тег-->
+   <h3>{% current_time '%b %d %Y %A' %}</h3>
+    <p style="text-align: left;"><em>Amount of news:</em> {{ news|length }} </p>
+<!--   <h3> {{ next_sale|default_if_none:"Чуть позже сообщим о распродаже!" }} </h3> &lt;!&ndash; default_if instead of default_if_none is possible&ndash;&gt;-->
+   <hr>
+   {% if news %}
+       <table style="height: 24px; "width="1200">
+           <tr>
+               <td style="width: 400px; text-align: center;"><strong> Topic</strong> </td>
+               <td style="width: 200px; text-align: center;"><strong> Creating date</strong> </td>
+               <td style="width: 300px; text-align: center;"><strong> Post </strong></td>
+               <td style="width: 100px; text-align: center;"><strong> Type</strong> </td>
+               <td style="width: 100px; text-align: center;"><strong> Author </strong></td>
+<!--               <td> Category </td>-->
+               <td style="width: 100px; text-align: center;"><strong> Rating</strong> </td>
+           </tr>
+
+           {% for news_ in news %}
+           <tr>
+                   <!-- Используем наш фильтр -->
+               <td>{{ news_.topic|censor|truncatewords:4 }}</td>
+<!--               <td>{{ news_.topic|truncatewords:4 }}</td>-->
+                <!-- Добавим специальный фильтр truncatechars,
+                чтобы ограничить количество символов до 15 (truncatewords — работает как truncatechars, только со словами).
+                Все остальные символы превратятся в многоточие. -->
+               <td>{{ news_.createTime|date:'d M Y' }}</td>
+               <td>{{ news_.content|censor|truncatechars:20 }}</td>
+               <td>{{ news_.contentType }}</td>
+               <td>{{ news_.author }}</td>
+<!--               <td>{{ news_.postCategory.name }}</td>-->
+               <td>{{ news_.rating }}</td>
+           </tr>
+           {% endfor %}
+
+        </table>
+   {% else %}
+       <h2>No news</h2>
+   {% endif %}
 {% endblock content %}

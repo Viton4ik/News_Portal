@@ -1,6 +1,8 @@
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'news/default.html' %}
 
+{% load custom_filters %}
+
 
 {% block title1 %}
 news
@@ -8,7 +10,7 @@ news
 
 
 {% block topic %}
-<h1 class="fw-bolder mb-1">{{ content.topic }}</h1>
+<h1 class="fw-bolder mb-1">{{ content.topic|censor }}</h1>
 {% endblock topic %}
 
 {% block date %}
@@ -20,12 +22,25 @@ news
 {{ content.author }}
 {% endblock author %}
 
+{% block type %}
+{{ content.contentType.title}}
+{% endblock type %}
+
+{% block category %}
+
+<!--&lt;!&ndash; {% if news %}&ndash;&gt;-->
+<!--&lt;!&ndash;   {% else %}&ndash;&gt;-->
+<!--&lt;!&ndash;       <h2>No news</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;   {% endif %}&ndash;&gt;-->
+<!--{{ category }}-->
+{{ content.postCategory.name }}
+{% endblock category %}
 
 {% block content %}
 <!--<h1>{{ content }}</h1>-->
 <!--or that-->
 <p></p>
-<p>{{ content.content }}</p>
+<p>{{ content.content|censor }}</p>
 <hr>
 
 {% endblock content %}
