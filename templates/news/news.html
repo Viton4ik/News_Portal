@@ -1,0 +1,14 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+<!-- Название у нас будет NEWS LIST -->
+{% block title1 %}
+News List
+{% endblock title1 %}
+
+<!-- В контенте на странице мы выводим все news -->
+{% block content %}
+<h1>News List </h1>
+{{ list }} <!--from view.py - context_object_name = 'list'-->
+<p>list: {{ list.content }}</p>
+{% endblock content %}

@@ -1,0 +1,31 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'news/default.html' %}
+
+
+{% block title1 %}
+news
+{% endblock title1 %}
+
+
+{% block topic %}
+<h1 class="fw-bolder mb-1">{{ content.topic }}</h1>
+{% endblock topic %}
+
+{% block date %}
+{{ content.createTime.date }}
+{{ content.createTime.time }}
+{% endblock date %}
+
+{% block author %}
+{{ content.author }}
+{% endblock author %}
+
+
+{% block content %}
+<!--<h1>{{ content }}</h1>-->
+<!--or that-->
+<p></p>
+<p>{{ content.content }}</p>
+<hr>
+
+{% endblock content %}
