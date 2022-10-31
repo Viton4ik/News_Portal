@@ -1,3 +1,4 @@
+
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'news/default.html' %}
 
@@ -8,39 +9,52 @@
 news
 {% endblock title1 %}
 
-
+<!--topic-->
 {% block topic %}
 <h1 class="fw-bolder mb-1">{{ content.topic|censor }}</h1>
 {% endblock topic %}
 
+<!--data-->
 {% block date %}
 {{ content.createTime.date }}
 {{ content.createTime.time }}
 {% endblock date %}
 
+<!--author-->
 {% block author %}
 {{ content.author }}
 {% endblock author %}
 
+<!--contentType-->
 {% block type %}
 {{ content.contentType.title}}
 {% endblock type %}
 
-{% block category %}
+<!--Post category-->
+{% block categories %}
+    {% for category in categories %}
+           {{ category }}.
+    {% endfor %}
+{% endblock categories %}
 
-<!--&lt;!&ndash; {% if news %}&ndash;&gt;-->
-<!--&lt;!&ndash;   {% else %}&ndash;&gt;-->
-<!--&lt;!&ndash;       <h2>No news</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;   {% endif %}&ndash;&gt;-->
-<!--{{ category }}-->
-{{ content.postCategory.name }}
-{% endblock category %}
-
+<!--content-->
 {% block content %}
-<!--<h1>{{ content }}</h1>-->
-<!--or that-->
 <p></p>
 <p>{{ content.content|censor }}</p>
 <hr>
-
 {% endblock content %}
+
+<!--comments-->
+{% block comment %}
+
+    {% for comment in comments %}
+          <p> - {{ comment }}</p>
+    {% endfor %}
+
+{% endblock comment %}
+
+<!--commentUser-->
+{% block commentUser %}
+{{ commentUser }}
+{% endblock commentUser %}
+

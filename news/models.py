@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
-# from news.resources import CONTENT_TYPE
+from django.urls import reverse
 
 
 class Author(models.Model):
@@ -30,12 +30,16 @@ class Author(models.Model):
 
     def __str__(self):
         return f'{self.authorUser}'
+    # def __str__(self):
+    #     return f'{self.authorUser.username}'
+
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
     def __str__(self):
         return f'{self.name}'
+
 
 class Post(models.Model):
     news = 'news'
@@ -44,12 +48,10 @@ class Post(models.Model):
         (news, 'новость'),
         (post, 'статья'),
     ]
-    # поле с выбором — «статья» или «новость»;
     contentType = models.CharField(max_length=4, choices=CONTENT_TYPE, default=post)
 
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     createTime = models.DateTimeField(auto_now_add=True)
-    # заголовок статьи / новости;
     topic = models.CharField(max_length=128)
     content = models.TextField()
     rating = models.SmallIntegerField(default=0)
@@ -71,6 +73,10 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.topic.title()}: {self.content[:20]}... Created: {self.createTime}\n'
 
+    # link to the name 'post_detail' in urls.py if using generics
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[str(self.id)])
+
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -78,6 +84,7 @@ class PostCategory(models.Model):
 
     def __str__(self):
         return f'{self.postThrough.content[:64]}...'
+
 
 class Comment(models.Model):
     text = models.TextField()
