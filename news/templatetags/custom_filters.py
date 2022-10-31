@@ -3,8 +3,8 @@ from django import template
 
 register = template.Library()
 
-
-censorship_list = ['спорт', 'австралия', 'согласие', 'рублев']
+# censorship filter
+censorship_list = ['спорт', 'производство', 'согласие', 'рублев', 'углублять']
 
 @register.filter()
 def censor(word):
@@ -25,3 +25,7 @@ def censor(word):
    except AttributeError as e:
       return f"ErrorMessage: {e}. Please use only 'str'!"
 
+# multiply filter
+@register.filter()
+def multiply(var1, var2):
+   return var1 * var2

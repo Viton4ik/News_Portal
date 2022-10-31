@@ -1,43 +1,37 @@
-<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
-{% load custom_filters %} <!--Где сustom_filters — это название Python файла, который мы создали в папке news/templatetags/.-->
+{% load custom_filters %}
 
 {% load custom_tags %}
 
-{% block title1 %}
-News List
-{% endblock title1 %}
-<!--{{ page_obj }}-->
 
 {% block content %}
-   <h1>News List</h1>
-   <h3>{% current_time '%b %d %Y %A' %}</h3>
-    <table style="width=1290">
+    <table>
         <tr>
-            <td><em><p style="width: 645px; text-align: left;">Amount of news on the page: {{ news|length }} </p></em></td>
-            <td><em><p style="width: 645px; text-align: right;">Total amount of news: {{  news_number }} </p></em></td>
+            <td><em><p style="width: 100px; text-align: left;"><a href="/news/" class="previous">&laquo; News List</a></p></em></td>
+            <td><h1><p style="width: 1150px;"><em>Detailed search:</em></h1></td>
         </tr>
     </table>
+<!--<input type="button" onclick="history.back();" value="Назад"/>-->
 
-<!--        <form action="" method="get" >-->
-<!--            {{ filterset.form.non_field_errors }}-->
+<hr>
+    {# Добавляем форму, которая объединяет набор полей, которые будут отправляться в запросе #}
+   <form action="" method="get">
+       {# Переменная, которую мы передали через контекст, может сгенерировать нам форму с полями #}
+       {{ filterset.form.as_p }}
+       {# Добавим кнопку отправки данных формы #}
 
-<!--            {{ filterset.form.topic__contains.errors }}-->
-<!--            <label for="{{ filterset.form.topic__contains.id_for_label }}">Search topic:</label>-->
-<!--            <input-->
-<!--                id="{{ filterset.form.topic__contains.id }}"-->
-<!--                name="{{ filterset.form.topic__contains.name }}"-->
-<!--                value="{{ filterset.form.topic__contains.value }}"-->
-<!--                class="form-control"-->
-<!--            >-->
-<!--            <input type="submit" class="mt-3 btn-primary" value="Search" />-->
-
-<!--        </form>-->
-<a href="/news/search"><button class="mt-3 btn-primary" type="button"> Detailed Search</button></a>
+       <input type="submit" value="Поиск" />
+   </form>
+<hr>
+   <form action="" method="get">
+       {# Button with an empty get-method to clean all filters #}
+       <input type="submit" value="Clean filters" />
+   </form>
 
    <hr>
    {% if news %}
+        <caption><em>News found: {{  news_number }}</em></caption>
        <table style="height: 24px; "width="1200">
 
            <tr>
@@ -59,11 +53,13 @@ News List
                <td>{{ news_.rating }}</td>
            </tr>
            {% endfor %}
-        <caption>{{ time_now|date:'M d Y l' }}</caption>
+
         </table>
    {% else %}
+
        <h2>No news</h2>
    {% endif %}
+
 
   {# Добавляем пагинацию на страницу #}
 
@@ -101,7 +97,5 @@ News List
 
     {% endif %}
 
-
 {% endblock content %}
-
 
