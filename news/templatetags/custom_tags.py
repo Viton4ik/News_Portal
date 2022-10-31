@@ -11,6 +11,7 @@ register = template.Library()
 def current_time(format_string='%b %d %Y'):
    return datetime.utcnow().strftime(format_string)
 
+
 # to replace tags with the same data when using filters
 # if using pangination+filter -> not to cancel filter if click to the next page
 @register.simple_tag(takes_context=True)

@@ -59,8 +59,6 @@ class PostDetail(DetailView):
         pprint(context)
         return context
 
-        # user = User.objects.get(id=request.user.id)
-        # author = Author.objects.get(user=user)
 
 # page - /news/create/
 def create_post(request):
@@ -77,6 +75,7 @@ def create_post(request):
             return HttpResponseRedirect('/news') # the page will be after post save
     return render(request, 'news/post_edit.html', {'form' : form})
 
+# или через generic
 # # page - /news/create/
 # class PostCreate(CreateView):
 #     form_class = PostForm
@@ -91,7 +90,6 @@ def create_post(request):
 #         return super().form_valid(form)
 
 
-# или через generic
 # page - /articles/create/
 class ArticleCreate(CreateView):
     form_class = PostForm
@@ -157,19 +155,3 @@ class PostSearch(ListView):
         context['filterset'] = self.filterset
         pprint(context)
         return context
-
-    # def clean_filters(request):
-    #    number = request.GET.get('number')
-    #    multiplier = request.GET.get('multiplier')
-    #
-    #    try:
-    #        result = int(number) * int(multiplier)
-    #        html = f"<html><body>{number}*{multiplier}={result}</body></html>" #?number=3&multiplier=2
-    #    except (ValueError, TypeError):
-    #        html = f"<html><body>Invalid input.</body></html>"
-    #
-    #    return HttpResponse(html) #?topic__contains=&author=&createTime_filer=
-
-    # def clean_filters(request):
-    #    html = f"<html><body>topic__contains=&author=&createTime_filer=</body></html>"
-    #    return HttpResponse(html) #?topic__contains=&author=&createTime_filer=

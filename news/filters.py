@@ -22,7 +22,7 @@ class PostFilter(FilterSet):
         empty_label='any',
     )
 
-####
+#### or like that
     # author = ModelMultipleChoiceFilter(
     #     field_name='author',
     #     queryset=Author.objects.all(),
