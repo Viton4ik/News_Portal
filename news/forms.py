@@ -1,7 +1,8 @@
 
 from django import forms
-from .models import Post, Category
+from .models import Post, Category, User, Author
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -10,7 +11,7 @@ class PostForm(forms.ModelForm):
                   'author',
                   'topic',
                   'content',
-                  # 'contentType',
+                  'contentType',
                   'postCategory',
               ]
 

@@ -28,6 +28,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# the first page after Authentication
+LOGIN_REDIRECT_URL = "/news"
+# the first page after log out
+LOGOUT_REDIRECT_URL = "/news"
+
+# connect `allauth`
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# AUTHENTICATION OPTIONS - customised
+ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
+
+# AUTHENTICATION OPTIONS
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
@@ -42,10 +62,21 @@ INSTALLED_APPS = [
     'django.contrib.flatpages', ###
     'fpages', ###
     'news', #-#
-    'accounts', #-#
     'django_filters', #-#
+    'accounts', #-#
+
+     # 3 compulsory apps for `allauth`
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # compulsory app for yandex auth
+    'allauth.socialaccount.providers.yandex',
+    # list of providers - https://django-allauth.readthedocs.io/en/latest/installation.html
+
+
 ]
-SITE_ID = 1 ###
+SITE_ID = 1 ### flatpages
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,6 +102,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # connect `allauth`
+                'django.template.context_processors.request',
             ],
         },
     },

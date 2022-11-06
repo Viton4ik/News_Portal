@@ -1,4 +1,8 @@
 
+
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from datetime import datetime
 from django.shortcuts import render
 from pprint import pprint
@@ -37,6 +41,8 @@ class PostList(ListView):
         context['news_number'] = len(Post.objects.all())
         # get filterset
         context['filterset'] = self.filterset
+        # get the user
+        context['user'] = self.request.user.username
         # to get info in console
         pprint(context)
         return context
@@ -48,28 +54,45 @@ class PostDetail(DetailView):
     pk_url_kwarg = 'id'
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
         # to get comments
-        context['comments'] = Comment.objects.filter(commentPost=self.object)
+        # context['comments'] = Comment.objects.filter(commentPost=self.object)
         # to get comment_user - doesn't work properly!
-        context['commentUser'] = User.objects.filter(username=self.object)
+        # context['commentUser'] = User.objects.filter(comment=context['comments'][0])
+
+        # to get comments + username
+        comment_user = []
+        comments = Comment.objects.filter(commentPost=self.object)
+        for i, comment in enumerate(comments):
+            comment_user.append(f"{User.objects.filter(comment=comments[i])[0]}: '{comments[i]}'")
+        context['comments'] = comment_user
+
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)
         # to get info in console
         pprint(context)
+        print(f"self.object:{self.object}")
+        print(f"**kwargs:{kwargs}")
         return context
 
+# add 403.html for def create_post
+def html_403(request):
+    form = PostForm()
+    return render(request, '403.html', {'form' : form})
 
 # page - /news/create/
+@permission_required(perm='news.add_post', login_url=html_403) # @login_required(login_url=html_403)
 def create_post(request):
+    # raise_exception = True
     form = PostForm()
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
 
-            # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
-            contentType = form.save(commit=False)
-            contentType.contentType = 'news'
+            # # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
+            # contentType = form.save(commit=False)
+            # contentType.contentType = 'news'
 
             form.save()
             return HttpResponseRedirect('/news') # the page will be after post save
@@ -90,42 +113,46 @@ def create_post(request):
 #         return super().form_valid(form)
 
 
-# page - /articles/create/
-class ArticleCreate(CreateView):
+# page - /news/edit/
+class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRequiredMixin, UpdateView):
+    # rights providing
+    permission_required = ('news.change_post',)
+
+    # show 403.html
+    raise_exception = True
+
     form_class = PostForm
     model = Post
     template_name = 'news/post_edit.html'
 
-    # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
-    # Далее super().form_valid(form) запустит стандартный механизм сохранения, который вызовет form.save(commit=True)
+    # save last editing time for the post
     def form_valid(self, form):
-        contentType = form.save(commit=False)
-        contentType.contentType = 'post'
+        editTime = form.save(commit=False)
+        # author_id = form.save(commit=False)
+        editTime.editTime = datetime.now()
+        # author_id.id = self.request.user.id
         return super().form_valid(form)
 
-# page - /news/edit/
-class PostUpdate(UpdateView):
-    form_class = PostForm
-    model = Post
-    template_name = 'news/post_edit.html'
-
-
-# page - /articles/edit/
-class ArticleUpdate(UpdateView):
-    form_class = PostForm
-    model = Post
-    template_name = 'news/post_edit.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user.username
+        context['author'] = Author.objects.get(post=self.get_object())#self.get_object()
+        context['user_id'] = self.request.user.id
+        context['author_id'] = self.get_object().author.authorUser.id
+        pprint(context)
+        print(f"self.object:{self.object}")
+        print(f"**kwargs:{kwargs}")
+        return context
 
 
 # page - /news/delete/
-class PostDelete(DeleteView):
-    model = Post
-    template_name = 'news/post_delete.html'
-    success_url = reverse_lazy('posts_list')
+class PostDelete(PermissionRequiredMixin, DeleteView): # class PostDelete(LoginRequiredMixin, DeleteView):
+    # rights providing
+    permission_required = ('news.delete_post',)
 
+    # show 403.html
+    raise_exception = True
 
-# page - /articles/delete/
-class ArticleDelete(DeleteView):
     model = Post
     template_name = 'news/post_delete.html'
     success_url = reverse_lazy('posts_list')

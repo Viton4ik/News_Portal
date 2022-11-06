@@ -109,3 +109,27 @@ for n, i in enumerate(all_post_comments.values()):
 #rating1 = all_post_comments.values('rating')[0]['rating']
 #rating2 = all_post_comments.values('rating')[1]['rating']
 # Post.objects.all().order_by('-rating').values('author', 'topic', 'rating', 'createTime') #метод сортировки
+
+
+12. Как с помощью тега можно сформировать url на страницу редактирования товара?
+
+{% url 'product_update' product.id %}
+# or
+{% url 'product_update' pk=product.id %}
+#product_update' указывается в кавычках как строка с названием пути, который зарегистрировали в urlpatterns.
+#product.id указывается без кавычек как переменная.
+#Название аргумента – pk – указывать не обязательно, но и не запрещается.
+
+
+13. pip freeze > requirements.txt
+
+
+14.path('accounts/', include('django.contrib.auth.urls')),
+Теперь нам стали доступны новые пути:
+accounts/login/ [name='login']
+accounts/logout/ [name='logout']
+accounts/password_change/ [name='password_change']
+accounts/password_change/done/ [name='password_change_done']
+accounts/password_reset/ [name='password_reset']
+accounts/password_reset/done/ [name='password_reset_done']
+accounts/reset/// [name='password_reset_confirm']accounts/reset/done/ [name='password_reset_complete']

@@ -13,9 +13,9 @@
     </head>
     <body>
         <!-- Responsive navbar-->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
            <div class="container">
-               <a class="navbar-brand" href="#">Django flatpages</a>
+               <a class="navbar-brand" href="/news/">News Portal</a>
                <button class="navbar-toggler" type="button" data-toggle="collapse"
                        data-target="#navbarResponsive"
                        aria-controls="navbarResponsive" aria-expanded="false"
@@ -29,12 +29,17 @@
                                <span class="sr-only">(current)</span>
                            </a>
                        </li>
+
+                       {% if not perms.news %}
                        <li class="nav-item">
-                           <a class="nav-link" href="/about/">About</a>
+                           <a class="nav-link" href="/accounts/login">Sign In (Unauthorised user)</a>
                        </li>
+                       {% endif %}
+                       {% if perms.news %}
                        <li class="nav-item">
-                           <a class="nav-link" href="/contacts/">Contact</a>
+                           <a class="nav-link" href="/accounts/logout">Sign Out ({% block user_name %}{% endblock user_name %})</a>
                        </li>
+                       {% endif %}
                    </ul>
                </div>
            </div>
@@ -56,6 +61,11 @@
                             <div class="text-muted fst-italic mb-2">Posted on
                                 {% block date %} {% endblock date %} by '{% block author %} {% endblock author %}'</div>
 
+                                <!-- edit time-->
+                                {% if content.editTime is not None %}
+                                    <div class="text-muted fst-italic mb-2">(last edition: {% block edit_time %} {% endblock edit_time %})</div>
+                                {% endif %}
+
 
                             <!-- Post categories-->
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">{% block type %} {% endblock type %}</a>
@@ -64,14 +74,18 @@
 
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+<!--                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{% static 'news/news.jpg' %}" alt="..." /></figure>
                         <!-- Post content-->
                         <section class="mb-5">
                             {% block content %}
                             {% endblock content %}
                             {% block comment %} {% endblock comment %}
                             {% block commentUser %} {% endblock commentUser %}
+                            {% block delete %} {% endblock delete %}
                        </section>
+
+
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">

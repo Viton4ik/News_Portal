@@ -4,6 +4,9 @@
 
 {% load custom_filters %}
 
+{% block user_name %}
+'{{ user }}'
+{% endblock user_name %}
 
 {% block title1 %}
 news
@@ -46,9 +49,9 @@ news
 
 <!--comments-->
 {% block comment %}
-
+<div class="fw-bold">Comments:</div>
     {% for comment in comments %}
-          <p> - {{ comment }}</p>
+          <p><em> - {{ comment.title }}</em></p>
     {% endfor %}
 
 {% endblock comment %}
@@ -58,3 +61,17 @@ news
 {{ commentUser }}
 {% endblock commentUser %}
 
+<!--delete post-->
+{% block delete %}
+    {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
+    {% if perms.news %} {# it can be more detailed - {% if perms.news.add/change/delete_post %} #}
+        <p>&nbsp;</p>
+        <a href="./{{ content.pk }}/delete/"><button class="mt-3 btn-primary" type="button"> Delete Post</button></a>
+        <a href="./{{ content.pk }}/edit/"><button class="mt-3 btn-primary" type="button"> Edit Post</button></a>
+    {% endif %}
+{% endblock delete %}
+
+<!--edit_time post-->
+{% block edit_time %}
+    {{ content.editTime }}
+{% endblock edit_time %}

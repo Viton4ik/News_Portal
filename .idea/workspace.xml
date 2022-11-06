@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1bc3c51-7dda-4935-a061-d8ca1e1883b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/migrations/0003_post_edittime.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/403/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/news/news.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoShellCommand_D2.9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoShellCommand_D2.9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/news/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/flatpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flatpages/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/post_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/post_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_search.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2HBrzNmkmyDBzZQIv9drBS06BCf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/DevProject/DjangoProjects/News_Portal"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1bc3c51-7dda-4935-a061-d8ca1e1883b9" name="Changes" comment="" />
+      <created>1667769580071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667769580071</updated>
+    </task>
+    <servers />
+  </component>
+</project>

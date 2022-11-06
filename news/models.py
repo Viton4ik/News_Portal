@@ -56,6 +56,9 @@ class Post(models.Model):
     content = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
+    # get editing time
+    editTime = models.DateTimeField(null=True)
+
     postCategory = models.ManyToManyField(Category, through='PostCategory')
 
     def like(self):

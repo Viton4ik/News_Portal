@@ -1,8 +1,14 @@
 {% extends 'flatpages/default.html' %}
 
+{% block user_name %}
+'{{ user }}'
+{% endblock user_name %}
 
 {% block content %}
 <h1>New Post</h1>
+<em><p style="width: 200px; text-align: left;"><a href="/news/" class="previous">&laquo; News List</a> &nbsp;
+<a onClick="history.go(-1);" class="previous"> &laquo; back</a></em></p>
+
 <hr>
    <form action="" method="post">
        {% csrf_token %}
