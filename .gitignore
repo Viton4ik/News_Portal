@@ -1,9 +1,9 @@
 News_Portal/hidden.py
 
+accounts/__pycache__/
+
+fpages/__pycache__/
+
+news/__pycache__/
+
 News_Portal/__pycache__/
-
-News_Portal/accounts/__pycache__/
-
-News_Portal/fpages/__pycache__/
-
-News_Portal/news/__pycache__/
