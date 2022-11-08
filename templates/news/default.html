@@ -13,6 +13,7 @@
     </head>
     <body>
         <!-- Responsive navbar-->
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
            <div class="container">
                <a class="navbar-brand" href="/news/">News Portal</a>
@@ -30,20 +31,21 @@
                            </a>
                        </li>
 
-                       {% if not perms.news %}
-                       <li class="nav-item">
-                           <a class="nav-link" href="/accounts/login">Sign In (Unauthorised user)</a>
-                       </li>
-                       {% endif %}
-                       {% if perms.news %}
+                       {% if request.user.is_authenticated %} {# or like that - % if perms.news %#}
                        <li class="nav-item">
                            <a class="nav-link" href="/accounts/logout">Sign Out ({% block user_name %}{% endblock user_name %})</a>
                        </li>
-                       {% endif %}
+                       {%else%}
+                       <li class="nav-item">
+                           <a class="nav-link" href="/accounts/login">Sign In (Unauthorised user)</a>
+                       </li>
+                        {% endif %}
+
                    </ul>
                </div>
            </div>
         </nav>
+
         <!-- Page content-->
         <div class="container mt-5">
             <div class="row">

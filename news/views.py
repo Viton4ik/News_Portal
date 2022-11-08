@@ -70,6 +70,20 @@ class PostDetail(DetailView):
 
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)
+
+        # get a user id
+        context['user_id'] = self.request.user.id
+        # get an author id
+        context['author_id'] = self.get_object().author.authorUser.id
+        # checking - is a user the author
+        context['user_is_author'] = context['user_id'] == context['author_id']
+        # checking for the admin rights
+        context['admin'] = self.request.user.is_superuser
+        # get an author's name
+        context['author'] = self.get_object().author.authorUser.username
+        # # get a user's name
+        context['user_name'] = self.request.user.username
+
         # to get info in console
         pprint(context)
         print(f"self.object:{self.object}")
@@ -84,16 +98,32 @@ def html_403(request):
 # page - /news/create/
 @permission_required(perm='news.add_post', login_url=html_403) # @login_required(login_url=html_403)
 def create_post(request):
-    # raise_exception = True
+    # form = PostForm()
+    # if request.method == 'POST':
+    #     form = PostForm(request.POST)
+    #     if form.is_valid():
+    #
+    #         # # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
+    #         # contentType = form.save(commit=False)
+    #         # contentType.contentType = 'news'
+    #
+    #         form.save()
+    #         return HttpResponseRedirect('/news') # the page will be after post save
+    #
+    # return render(request, 'news/post_edit.html', {'form' : form})
+
     form = PostForm()
+    if_admin_ = request.user.is_superuser
+
+    author_ = Post._meta.get_field('author')
+    # all_fields = form._meta.fields[0]
+    user_ = request.user.username
+    print(user_)
+    print(if_admin_)
+    print(author_)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-
-            # # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
-            # contentType = form.save(commit=False)
-            # contentType.contentType = 'news'
-
             form.save()
             return HttpResponseRedirect('/news') # the page will be after post save
     return render(request, 'news/post_edit.html', {'form' : form})
@@ -128,17 +158,31 @@ class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRe
     # save last editing time for the post
     def form_valid(self, form):
         editTime = form.save(commit=False)
-        # author_id = form.save(commit=False)
         editTime.editTime = datetime.now()
-        # author_id.id = self.request.user.id
+
+        # author = form.save(commit=False)
+        # Author1 = User.objects.get(username=self.request.user.username)
+        # if not Author1:
+        #     Author.objects.create(authorUser=Author1)
+        # author.author = Author1
+
         return super().form_valid(form)
 
+    # in a process!!!
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['user'] = self.request.user.username
-        context['author'] = Author.objects.get(post=self.get_object())#self.get_object()
-        context['user_id'] = self.request.user.id
-        context['author_id'] = self.get_object().author.authorUser.id
+        context['userName'] = self.request.user.username
+        context['authorName'] = Author.objects.get(post=self.get_object())#self.get_object()
+        context['User_id'] = self.request.user.id
+        context['Author_id'] = self.get_object().author.authorUser.id
+
+        # Author1 = User.objects.get(username=self.request.user.username)
+        # if context['user_id'] != context['author_id']:
+        #     Author.objects.create(authorUser=Author1)
+
+        # get an author's name
+        # context['author'] = self.get_object().author.authorUser.username
+
         pprint(context)
         print(f"self.object:{self.object}")
         print(f"**kwargs:{kwargs}")

@@ -63,11 +63,14 @@ news
 
 <!--delete post-->
 {% block delete %}
-    {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
-    {% if perms.news %} {# it can be more detailed - {% if perms.news.add/change/delete_post %} #}
-        <p>&nbsp;</p>
-        <a href="./{{ content.pk }}/delete/"><button class="mt-3 btn-primary" type="button"> Delete Post</button></a>
-        <a href="./{{ content.pk }}/edit/"><button class="mt-3 btn-primary" type="button"> Edit Post</button></a>
+    {# check if the user is an author or admin #}
+    {% if user_is_author or user.is_superuser %}
+        {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
+        {% if perms.news %} {# it can be more detailed - {% if perms.news.add/change/delete_post %} #}
+            <p>&nbsp;</p>
+            <a href="./{{ content.pk }}/delete/"><button class="mt-3 btn-primary" type="button"> Delete Post</button></a>
+            <a href="./{{ content.pk }}/edit/"><button class="mt-3 btn-primary" type="button"> Edit Post</button></a>
+        {% endif %}
     {% endif %}
 {% endblock delete %}
 

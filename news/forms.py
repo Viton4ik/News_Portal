@@ -5,6 +5,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
+
     class Meta:
         model = Post
         fields = [
@@ -27,6 +28,7 @@ class PostForm(forms.ModelForm):
             raise ValidationError(
                 "Content and topic are the same. Please correct!"
             )
+
         return cleaned_data
 
     # doesn't work!!!
@@ -36,4 +38,8 @@ class PostForm(forms.ModelForm):
             raise ValidationError(
                 "'Topic' has to have the first capital letter"
             )
+
         return topic
+
+
+

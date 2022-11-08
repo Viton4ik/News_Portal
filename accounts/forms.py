@@ -31,7 +31,7 @@ class CustomSignupForm(SignupForm):
         user.groups.add(common_users)
         return user
 
-from django.contrib.auth.models import User
+
 
 
 
