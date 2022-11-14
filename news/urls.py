@@ -17,5 +17,5 @@ urlpatterns = [
    path('403/', html_403, name='403'),
    path('categories/<int:pk>', CategoryListView.as_view(), name='category_list'),
    path('categories/<int:pk>/subscribe', subscribe, name='subscribe'),
-   # path('author_create/', AuthorCreate.as_view(), name='author_create'),
+
 ]

@@ -22,14 +22,6 @@ class PostFilter(FilterSet):
         empty_label='any',
     )
 
-#### or like that
-    # author = ModelMultipleChoiceFilter(
-    #     field_name='author',
-    #     queryset=Author.objects.all(),
-    #     label='Author',
-    #     conjoined=True,
-    # )
-#####
 
     postCategory = ModelChoiceFilter(
         field_name='postCategory',
@@ -52,13 +44,6 @@ class PostFilter(FilterSet):
     class Meta:
        model = Post
        fields = {
-           # 'topic': ['contains'],
-           # 'author': ['exact'],
-           # 'postCategory': ['exact'],
-           # 'rating': ['contains'],
-           # 'createTime': [
-           #     'date__gte'],
-           #     'date__lte',
-           # ],
+
        }
 

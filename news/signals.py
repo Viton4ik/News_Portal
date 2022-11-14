@@ -7,9 +7,9 @@ from django.core.mail import mail_admins, EmailMultiAlternatives
 from django.dispatch import receiver
 from datetime import datetime
 
-@receiver(post_save, sender=Post) # insted of using post_save.connect(notify_post_create, sender=Post) after fuction
+@receiver(post_save, sender=Post)
 def notify_post_create(sender, instance, created, **kwargs):
-    # в зависимости от того, есть ли такой объект уже в базе данных или нет, тема письма будет разная
+
     if created:
         subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: User: '{instance.author}' created a new Post"
     else:
@@ -19,8 +19,7 @@ def notify_post_create(sender, instance, created, **kwargs):
         subject=subject,
         message=f"Title: '{instance.topic}'\n\n'{instance.content}'",
     )
-# коннектим наш сигнал к функции обработчику и указываем, к какой именно модели после сохранения привязать функцию
-# post_save.connect(notify_post_create, sender=Post)
+
 
 @receiver(post_delete, sender=Post)
 def notify_post_delete(sender, instance, **kwargs):
