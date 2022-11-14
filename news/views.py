@@ -22,6 +22,11 @@ from django.contrib.auth.models import Group
 class PostList(ListView):
     model = Post
     ordering = '-createTime'
+
+    # or we can sort fields
+    # queryset = Post.objects.filter(rating__gt=2)
+    # queryset = Product.objects.order_by('name')
+
     template_name = 'news/news.html'
     context_object_name = 'news'
     # количество записей на странице
