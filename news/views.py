@@ -22,11 +22,6 @@ from django.contrib.auth.models import Group
 class PostList(ListView):
     model = Post
     ordering = '-createTime'
-
-    # or we can sort fields
-    # queryset = Post.objects.filter(rating__gt=2)
-    # queryset = Product.objects.order_by('name')
-
     template_name = 'news/news.html'
     context_object_name = 'news'
     # количество записей на странице
@@ -175,7 +170,6 @@ def create_post(request):
     # print(f'if_admin_: {if_admin_}')
     print(f'user_is_author: {user_is_author}')
 
-
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -190,7 +184,7 @@ def create_post(request):
 
             return HttpResponseRedirect('/news') # the page will be after post save
 
-    return render(request, 'news/post_edit.html', {'form': form})
+    return render(request, 'news/post_edit.html', {'form': form, 'user_is_author': user_is_author, 'if_author_group': if_author_group})
         # return HttpResponseRedirect('../403/')
 
 # # page - /news/create/

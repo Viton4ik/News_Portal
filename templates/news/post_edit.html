@@ -10,7 +10,7 @@
 <a onClick="history.go(-1);" class="previous"> &laquo; back</a></em></p>
 
 <hr>
-<a>{{ user_is_author }}</a>
+
 {% if user_is_author or user.is_superuser or upd_is_author or if_author_group %}
    <form action="" method="post">
        {% csrf_token %}
