@@ -36,7 +36,7 @@ news
 <!--Post category-->
 {% block categories %}
     {% for category in categories %}
-           {{ category }}.
+           {{ category }}
     {% endfor %}
 {% endblock categories %}
 
@@ -64,7 +64,7 @@ news
 <!--delete post-->
 {% block delete %}
     {# check if the user is an author or admin #}
-    {% if user_is_author or user.is_superuser %}
+    {% if is_author or user.is_superuser %}
         {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
         {% if perms.news %} {# it can be more detailed - {% if perms.news.add/change/delete_post %} #}
             <p>&nbsp;</p>

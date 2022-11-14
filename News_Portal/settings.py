@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
-from News_Portal.hidden import SECRET_KEY_DJANGO # to hid SECRET_KEY
+from News_Portal.hidden import * #SECRET_KEY_DJANGO # to hid SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +33,9 @@ LOGIN_REDIRECT_URL = "/news"
 # the first page after log out
 LOGOUT_REDIRECT_URL = "/news"
 
+SITE_URL = "http://127.0.0.1:8000"
+
+
 # connect `allauth`
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -45,9 +48,16 @@ ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 # AUTHENTICATION OPTIONS
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USERNAME_REQUIRED = True # activate the username filed
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VRIFICATION = 'mandatory' #ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_CONFIRM_EMAIL_ON_GET = True #позволит избежать дополнительных действий и активирует аккаунт сразу, как только мы перейдем по ссылке
+ACCOUNT_EMAIL_SUBJECT_PREFIX ='' # delete 'example.com' in subject
+
+ADMINS = [
+    ('Me', 'viton4ikk@yandex.ru'),
+]
+
 
 # Application definition
 
@@ -61,7 +71,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', ###
     'django.contrib.flatpages', ###
     'fpages', ###
-    'news', #-#
+    'news.apps.NewsConfig', #-# instead using 'news' to activate decorators for senders (setting.py)
     'django_filters', #-#
     'accounts', #-#
 
@@ -74,8 +84,16 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.yandex',
     # list of providers - https://django-allauth.readthedocs.io/en/latest/installation.html
 
+    'django_apscheduler', # наш задачник
 
 ]
+# формат даты, которую будет воспринимать наш задачник (вспоминаем модуль по фильтрам)
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+
+# если задача не выполняется за 25 секунд, то она автоматически снимается, можете поставить время побольше,
+# но как правило, это сильно бьёт по производительности сервера
+APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
 SITE_ID = 1 ### flatpages
 
 MIDDLEWARE = [
@@ -109,6 +127,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'News_Portal.wsgi.application'
 

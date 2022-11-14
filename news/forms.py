@@ -8,6 +8,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
+
         fields = [
                   'author',
                   'topic',
@@ -16,6 +17,9 @@ class PostForm(forms.ModelForm):
                   'postCategory',
               ]
 
+    # widgets = {
+    #     'author': forms.HiddenInput(),
+    # }
     def clean(self):
         cleaned_data = super().clean()
         topic = cleaned_data.get("topic")

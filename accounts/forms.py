@@ -1,5 +1,5 @@
-#
-# from django import forms
+# #
+from django import forms
 # from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.models import User
 #
@@ -21,10 +21,12 @@
 #         )
 
 # customised form
-from allauth.account.forms import SignupForm
+from allauth.account.forms import SignupForm, UserForm, PasswordField, BaseSignupForm
 from django.contrib.auth.models import Group
 
+
 class CustomSignupForm(SignupForm):
+
     def save(self, request):
         user = super().save(request)
         common_users = Group.objects.get(name="common users")
