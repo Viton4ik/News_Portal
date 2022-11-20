@@ -25,8 +25,7 @@ def my_job():
     categories = set(posts.values_list('postCategory__name', flat=True))
     # subscribers_mail = set(Category.objects.filter(name__in=categories).values_list('subscribers__email', flat=True))
     subscribers_id = set(Category.objects.filter(name__in=categories).values_list('subscribers', flat=True))
-    print(list(categories))
-    print(list(subscribers_id))
+
     for subscriber_id in subscribers_id:
         user_ = User.objects.filter(id=subscriber_id).values_list('username', flat=True)
         user_mail_ = User.objects.filter(id=subscriber_id).values_list('email', flat=True)
@@ -34,14 +33,7 @@ def my_job():
         category_list_id = Category.objects.filter(subscribers=subscriber_id).values_list('id', flat=True)
         posts_ = Post.objects.filter(postCategory__in=category_list_id)
         week_posts = set(posts_)&set(posts)
-        print(subscriber_id)
-        print(user_)
-        print(user_mail_)
-        print(category_list)
-        print(category_list_id)
-        print(posts_)
-        print(week_posts)
-        print('----')
+
         is_subscribed = any(item in category_list for item in categories)
         # if category_list not in categories:
         if is_subscribed:
@@ -49,8 +41,8 @@ def my_job():
                 'daily_post.html',
                 {
                     'link': settings.SITE_URL,
-                    'posts': week_posts,#posts_,#posts,
-                    'categories': list(category_list),#categories,
+                    'posts': week_posts,
+                    'categories': list(category_list),
 
                 }
             )
@@ -58,7 +50,7 @@ def my_job():
                 subject='Weekly news',
                 body='',
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                to=user_mail_,#subscribers,
+                to=user_mail_,
             )
 
             msg.attach_alternative(html_content, "text/html")
@@ -80,7 +72,7 @@ class Command(BaseCommand):
         # добавляем работу нашему задачнику
         scheduler.add_job(
             my_job,
-            trigger=CronTrigger(),#second="*/10"),
+            trigger=CronTrigger(day_of_week="mon", hour="00", minute="30"),#second="*/10"),
             # То же, что и интервал, но задача тригера таким образом более понятна django
             id="my_job",  # уникальный айди
             max_instances=1,

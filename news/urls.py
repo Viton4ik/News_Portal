@@ -2,7 +2,8 @@
 from django.urls import path
 
 # Импортируем созданное нами представление
-from .views import PostList, PostDetail, PostUpdate, PostDelete, PostSearch, create_post, html_403, CategoryListView, subscribe#, AuthorCreate #PostCreate
+from .views import PostList, PostDetail, PostUpdate, PostDelete, PostSearch, create_post, \
+   html_403, CategoryListView, subscribe, author_create#, AuthorCreate #PostCreate
 
 urlpatterns = [
    path('', PostList.as_view(), name='posts_list'),
@@ -17,5 +18,7 @@ urlpatterns = [
    path('403/', html_403, name='403'),
    path('categories/<int:pk>', CategoryListView.as_view(), name='category_list'),
    path('categories/<int:pk>/subscribe', subscribe, name='subscribe'),
+   path('author_create/', author_create, name='author_create'),
    # path('author_create/', AuthorCreate.as_view(), name='author_create'),
+
 ]

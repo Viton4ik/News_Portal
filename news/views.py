@@ -4,11 +4,10 @@ from django.views.generic.edit import ModelFormMixin, SingleObjectMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from datetime import datetime
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from pprint import pprint
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
-from .models import Post, Category, Comment, Author
+from .models import Post, Category, Comment, Author, PostCategory
 from django.contrib.auth.models import User
 from .filters import PostFilter
 from .forms import PostForm #AuthortForm
@@ -17,6 +16,8 @@ from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.views import View
 from django.contrib.auth.models import Group
+from datetime import datetime, timedelta
+
 
 
 class PostList(ListView):
@@ -128,56 +129,62 @@ def create_post(request):
     #
     # return render(request, 'news/post_edit.html', {'form' : form})
 
+
+
+
+
     form = PostForm()
-    # get user with his id
+
+    # get the user
     user_ = request.user.username
-    user_id_ = request.user.id
-    # check if admin
-    if_admin_ = request.user.is_superuser
-    e_mail = request.user.email
-    print(f'e_mail: {e_mail}')
-    subscribed_categories = Category.objects.filter(subscribers=request.user.id)
-    print(f'subscribed_categories: {subscribed_categories}')
-    # category = Post._meta.get_field('postCategory').value_from_object(Post.objects.all().values('postCategory'))
-    # # post_categories = request.category.name
-    # print(f'category: {category}')
-
-    author_group = Group.objects.get(name="authors")
-    user_group = request.user.groups.filter()
-    print(f'user_group: {user_group}')
-    if_author_group = author_group in user_group
-    print(f'if_author_group: {if_author_group}')
-
-    # get an author with his id
-    # author_field = Post._meta.get_field('author')
-    # author_id_ = author_field.value_from_object(Post.objects.first())
-    # author_ = Author.objects.filter(id=author_id_)[0]
-
-    author_name = str(*Author.objects.filter(authorUser_id=request.user.id))
+    author_name_ = Author.objects.filter(authorUser_id=request.user.id)
+    author_name = str(*Author.objects.filter(authorUser_id=request.user.id)) if not request.user.is_superuser else f"Admin: <{request.user.username}>"
+    # check if the user is an author
     user_is_author = author_name == str(user_)
 
-    author_ = Author.objects.filter(authorUser_id=request.user.id)
-    if not author_:
-        print(f"'{user_}' is not an author!")
-    else:
-        print(f"'{user_}' is an author!")
-    #     author_name = Author.objects.filter(authorUser_id=request.user.id)[0] #Author.objects.get(author=request.get_object())
-    #     print(f"author_name: {author_name} ")
-    #     user_is_author = (str(author_name) == str(user_))
-    #     print(f'user_is_author: {user_is_author}')
+    # check if admin
+    # if_admin_ = request.user.is_superuser
 
-    # create_author = Author.objects.create(authorUser=User.objects.get(username=request.user.username))
+    # print an e-mail to check
+    e_mail = request.user.email
+    print(f'e_mail: {e_mail}')
 
-    # print(f'author_: {author_}')
-    print(f'author_name: {author_name}')
-    print(f'user_: {user_}')
-    # print(f'user_id_: {user_id_}')
-    # print(f'if_admin_: {if_admin_}')
-    print(f'user_is_author: {user_is_author}')
+    # get user's subscriber categoties
+    subscribed_categories = Category.objects.filter(subscribers=request.user.id)
+    print(f'subscribed_categories: {subscribed_categories}')
+
+    # get group 'authors'
+    author_group = Group.objects.get(name="authors")
+    # get all users' groups
+    user_group = request.user.groups.filter()
+    # check if user is in the 'authors' group
+    is_author_group = author_group in user_group
+
+    # get authors list
+    author_list = Author.objects.all()
+
+    # print(f"form: {form['author']}")
+
+    # to show my time zone
+    from django.utils import timezone
+    print(f"timezone: {timezone.now()}")
 
     if request.method == 'POST':
         form = PostForm(request.POST)
+
+
         if form.is_valid():
+
+            # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
+            author = form.save(commit=False)
+            # if not an admin
+            if not request.user.is_superuser:
+                author.author = Author.objects.get(authorUser_id=request.user.id)
+            else:
+                # if admin - author has to be chosen
+                author_user = User.objects.get(username=request.POST['author'])
+                author.author = Author.objects.get(authorUser_id=author_user.id)
+
             # send_mail(
             #     subject=f"{request.POST['topic']}",
             #     message=f"{request.POST['content']}",
@@ -185,12 +192,33 @@ def create_post(request):
             #     recipient_list=[f'{e_mail}'],
             #     # fail_silent=False # - doesn't work with this feature
             # )
+
             form.save()
 
             return HttpResponseRedirect('/news') # the page will be after post save
 
-    return render(request, 'news/post_edit.html', {'form': form, 'user_is_author': user_is_author, 'if_author_group': if_author_group})
-        # return HttpResponseRedirect('../403/')
+    return render(request, 'news/post_edit.html', {
+        'form': form,
+        'user_is_author': user_is_author,
+        'is_author_group': is_author_group,
+        'author_name': author_name,
+        'author_list': list(author_list),
+    })
+
+# author_create function
+def author_create(request):
+    user_id = request.user.id
+    authors_list_id = Author.objects.all().values_list('authorUser', flat=True)
+    if user_id not in authors_list_id:                        # if user is not an author
+        author = Author.objects.create(authorUser_id=user_id) # create a new author
+        authors_group = Group.objects.get(name="authors")     # put him in group 'authors'
+        request.user.groups.add(authors_group)                # put him in group 'authors'
+        message = f"Congratulations! '{request.user}' has become an Author!"
+    else:
+        author = user_id
+        message = f"'{request.user}' is already an Author!"
+    return render(request, 'news/author_create.html', {'category': author, 'message': message})
+
 
 # # page - /news/create/
 # class PostCreate(CreateView):
@@ -228,31 +256,6 @@ def create_post(request):
 #         return redirect('appointments:post_edit')
 
 
-
-
-# class AuthorCreate(CreateView):
-#     form_class = AuthortForm
-#     model = Post
-#     template_name = 'news/author.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         # context['create_user_id'] = self.request.user.id
-#         # context['create_author_id'] = self.get_object().author.authorUser.id
-#         # context['create_is_author'] = context['create_user_id'] == context['create_author_id']
-#         # context['create_author_'] = Author.objects.filter(authorUser_id=self.request.user.id)
-#         # if not context['create_author_']:
-#         #     Author.objects.create(authorUser=User.objects.get(username=self.request.user.username))
-#         # else:
-#         #     HttpResponseRedirect('../403/')
-#
-#         pprint(context)
-#         return context
-
-
-
-
-
 # page - /news/edit/
 class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRequiredMixin, UpdateView):
     # rights providing
@@ -269,32 +272,23 @@ class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRe
     def form_valid(self, form):
         editTime = form.save(commit=False)
         editTime.editTime = datetime.now()
+        author = form.save(commit=False)
+        # if not an admin
+        if not self.request.user.is_superuser:
+            author.author = Author.objects.get(authorUser_id=self.request.user.id)
+        else:
+            # if admin - author has to be chosen
+            author_user = User.objects.get(username=self.request.POST['author'])
+            author.author = Author.objects.get(authorUser_id=author_user.id)
         return super().form_valid(form)
 
-    # in a process!!!
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['upd_userName'] = self.request.user.username
         context['upd_user_id'] = self.request.user.id
-        context['upd_author'] = self.get_object().author.authorUser.username
         context['upd_author_id'] = self.get_object().author.authorUser.id
         context['upd_is_author'] = context['upd_user_id'] == context['upd_author_id']
-        context['upd_admin'] = self.request.user.is_superuser
-
-        # if context['upd_is_author']:
-        #     Post._meta.get_field('author').widgets{'author': forms.HiddenInput(),}
-
-        #     save_form_data(instance=Post._meta.get_field('author'), data=context['upd_author'])
-
-
-
-        # Author1 = User.objects.get(username=self.request.user.username)
-        # if context['user_id'] != context['author_id']:
-        #     Author.objects.create(authorUser=Author1)
-
-        # get an author's name
-        # context['author'] = self.get_object().author.authorUser.username
-
+        context['author_name'] = str(*Author.objects.filter(authorUser_id=self.request.user.id)) if not self.request.user.is_superuser else f"Admin: <{self.request.user.username}>"
+        context['author_list'] = list(Author.objects.all())
 
         pprint(context)
         print(f"self.object:{self.object}")
@@ -344,7 +338,7 @@ class PostSearch(ListView):
 # def update_me(request):
 #     user = request.user
 #     authors_group = Group.objects.get(name='authors')
-#     if not request.user.group.filter(name='authors').exists():
+#     if not request.user.group.filter(name='authors').exists():   #!!!!!!!!
 #         authors_group.user_set.add(user)
 #     return redirect('/news')
 
@@ -373,3 +367,16 @@ def subscribe(request, pk):
     category.subscribers.add(user)
     message = f"You have subscribed to the news in category:"
     return render(request, 'news/subscribe.html', {'category' : category, 'message': message})
+
+
+
+
+
+# class IndexView(View):
+#     def get(self, request):
+#         # printer.delay(10)
+#         # printer.apply_async([10], countdown=5) # Параметр countdown устанавливает время (в секундах), через которое задача должна начать выполняться
+#         printer.apply_async([10],
+#                             eta = datetime.now() + timedelta(seconds=5)) # для реализации того же самого сдвига на 5 секунд мы можем получить текущее время и добавить timedelta, равное 5 секундам, чтобы получить datetime-объект момента через 5 секунд от текущего.
+#         hello.delay()
+#         return HttpResponse('Hello!')
