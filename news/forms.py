@@ -7,10 +7,11 @@ from django.contrib.auth.models import User
 class PostForm(forms.ModelForm):
 
     class Meta:
+
         model = Post
 
         fields = [
-                  'author',
+                  # 'author',
                   'topic',
                   'content',
                   'contentType',
@@ -41,6 +42,4 @@ class PostForm(forms.ModelForm):
             )
 
         return topic
-
-
 

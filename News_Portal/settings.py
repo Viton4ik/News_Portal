@@ -31,10 +31,11 @@ ALLOWED_HOSTS = []
 # the first page after Authentication
 LOGIN_REDIRECT_URL = "/news"
 # the first page after log out
-LOGOUT_REDIRECT_URL = "/news"
+# LOGOUT_REDIRECT_URL = "/news"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
 
+# use this for signals
 SITE_URL = "http://127.0.0.1:8000"
-
 
 # connect `allauth`
 AUTHENTICATION_BACKENDS = [
@@ -171,7 +172,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False#True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -185,3 +186,11 @@ STATIC_URL = 'static/' ###
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']  ###
+
+# add Celery_redis
+CELERY_BROKER_URL = CELERY_BROKER_URL_            # указывает на URL брокера сообщений (Redis). По умолчанию он находится на порту 6379.
+CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND_    # указывает на хранилище результатов выполнения задач
+CELERY_ACCEPT_CONTENT = ['application/json']      # допустимый формат данных
+CELERY_TASK_SERIALIZER = 'json'                   # метод сериализации задач.
+CELERY_RESULT_SERIALIZER = 'json'                 # метод сериализации результатов.
+

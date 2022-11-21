@@ -32,6 +32,10 @@ def my_job():
         category_list_id = Category.objects.filter(subscribers=subscriber_id).values_list('id', flat=True)
         posts_ = Post.objects.filter(postCategory__in=category_list_id)
         week_posts = set(posts_)&set(posts)
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
         is_subscribed = any(item in category_list for item in categories)
 
         if is_subscribed:
@@ -70,7 +74,11 @@ class Command(BaseCommand):
         # добавляем работу нашему задачнику
         scheduler.add_job(
             my_job,
+<<<<<<< HEAD
             trigger=CronTrigger(day_of_week="mon", hour="00", minute="30"),
+=======
+            trigger=CronTrigger(day_of_week="mon", hour="00", minute="30"),#second="*/10"),
+>>>>>>> dev
             # То же, что и интервал, но задача тригера таким образом более понятна django
             id="my_job",  # уникальный айди
             max_instances=1,
