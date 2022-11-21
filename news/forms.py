@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Post, Category, User, Author
+from .models import Post
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
         model = Post
 
         fields = [
-                  # 'author',
+                  # 'author', # create 'author' in a separate form
                   'topic',
                   'content',
                   'contentType',

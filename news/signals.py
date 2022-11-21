@@ -1,24 +1,17 @@
 from django.template.loader import render_to_string
 
 from django.conf import settings
-from .models import Post, PostCategory, User
+from .models import Post, PostCategory
 from django.db.models.signals import post_save, post_delete, m2m_changed
 from django.core.mail import mail_admins, EmailMultiAlternatives
 from django.dispatch import receiver
-from datetime import datetime
-
-<<<<<<< HEAD
-@receiver(post_save, sender=Post)
-=======
-from django.shortcuts import render
 
 from .tasks import new_post_mailing
 
 
 @receiver(post_save, sender=Post) # insted of using post_save.connect(notify_post_create, sender=Post) after fuction
->>>>>>> dev
 def notify_post_create(sender, instance, created, **kwargs):
-
+    # в зависимости от того, есть ли такой объект уже в базе данных или нет, тема письма будет разная
     if created:
         subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: User: '{instance.author}' created a new Post"
     else:
@@ -80,5 +73,3 @@ def notify_about_new_post(sender, instance, **kwargs):
 def notify_about_new_post_Celery(sender, instance, **kwargs):
     if kwargs['action'] == 'post_add': # before we add the post
         new_post_mailing.delay(instance.pk)
-
-

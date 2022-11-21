@@ -30,8 +30,6 @@ class Author(models.Model):
 
     def __str__(self):
         return f'{self.authorUser}'
-    # def __str__(self):
-    #     return f'{self.authorUser.username}'
 
 
 class Category(models.Model):
