@@ -191,8 +191,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static']  ###
 # CELERY_BROKER_URL = CELERY_BROKER_URL_            # указывает на URL брокера сообщений (Redis - web version). hidden.py
 # CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND_    # указывает на хранилище результатов выполнения задач (Redis - web version). hidden.py
 
-CELERY_BROKER_URL = 'redis://localhost:6379'        # указывает на URL брокера сообщений (Redis - lunux version). По умолчанию он находится на порту 6379.
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'    # указывает на хранилище результатов выполнения задач (Redis - lunux version)
+CELERY_BROKER_URL = 'redis://localhost:6379'        # указывает на URL брокера сообщений (Redis - linux version). По умолчанию он находится на порту 6379.
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'    # указывает на хранилище результатов выполнения задач (Redis - linux version)
 
 CELERY_ACCEPT_CONTENT = ['application/json']      # допустимый формат данных
 CELERY_TASK_SERIALIZER = 'json'                   # метод сериализации задач.
