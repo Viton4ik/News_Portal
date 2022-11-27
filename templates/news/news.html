@@ -16,8 +16,9 @@ News List
 
 {% block content %}
    <h1>News List</h1>
+
    <h3>{% current_time '%b %d %Y %A' %}</h3>
-    <table style="width=1290">
+    <table style="width: 1290px">
         <tr>
             <td><em><p style="width: 645px; text-align: left;">Amount of news on the page: {{ news|length }} </p></em></td>
             <td><em><p style="width: 645px; text-align: right;">Total amount of news: {{  news_number }} </p></em></td>

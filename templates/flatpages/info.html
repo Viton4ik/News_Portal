@@ -1,14 +1,17 @@
 {% extends 'flatpages/default.html' %}
 
 {% block title1 %}
-{{ flatpage.title }}
+    {{ flatpage.title }}
 {% endblock title1 %}
 
 {% block user_name %}
-'{{ user }}'
+    '{{ user }}'
 {% endblock user_name %}
 
 {% block content %}
-{{ flatpage.content }}
-<hr>
+    {% load cache %}
+        {% cache 1000 content %}
+            {{ flatpage.content }}
+            <hr>
+        {% endcache %}
 {% endblock content %}

@@ -4,7 +4,7 @@ from django import template
 register = template.Library()
 
 # censorship filter
-censorship_list = ['спорт', 'производство', 'согласие', 'рублев', 'углублять']
+censorship_list = ['спорт', 'производство', 'согласие', 'рублев', 'углублять', 'example,', 'critical']
 
 @register.filter()
 def censor(word):
@@ -26,6 +26,11 @@ def censor(word):
       return f"ErrorMessage: {e}. Please use only 'str'!"
 
 # multiply filter
-@register.filter()
+@register.filter
 def multiply(var1, var2):
    return var1 * var2
+
+# cash testing filter
+@register.filter
+def pow(var1, var2):
+   return var1**var2

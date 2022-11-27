@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Post, Category, User, Author
+from .models import Post, Comment, Category, User, Author
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
@@ -46,3 +46,14 @@ class PostForm(forms.ModelForm):
 
         return topic
 
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Comment
+
+        fields = [
+                  'text',
+                  # 'commentPost',
+                  # 'commentUser',
+              ]

@@ -10,13 +10,16 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView, C
 from .models import Post, Category, Comment, Author, PostCategory
 from django.contrib.auth.models import User
 from .filters import PostFilter
-from .forms import PostForm #AuthortForm
+from .forms import PostForm, CommentForm #AuthortForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.views import View
 from django.contrib.auth.models import Group
 from datetime import datetime, timedelta
+
+from django.core.cache import cache   # Кэширование на низком уровне
+from django.views.decorators.cache import cache_page # import cash decorator - @cache_page(60 * 15)
 
 
 
@@ -59,6 +62,16 @@ class PostDetail(DetailView):
     context_object_name = 'content'
     pk_url_kwarg = 'id'
 
+    # put posts into cache
+    def get_object(self, *args, **kwargs):  # переопределяем метод получения объекта
+        # кэш очень похож на словарь, и метод get действует так же. Он забирает значение по ключу, если его нет, то забирает None.
+        obj = cache.get(f'post-{self.kwargs["id"]}', None)
+
+        # если объекта нет в кэше, то получаем его и записываем в кэш
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'post-{self.kwargs["id"]}', obj)
+        return obj
 
     def get_context_data(self, **kwargs):
 
@@ -68,12 +81,19 @@ class PostDetail(DetailView):
         # to get comment_user - doesn't work properly!
         # context['commentUser'] = User.objects.filter(comment=context['comments'][0])
 
-        # to get comments + username
+        # FIXME: to get comments + username
         comment_user = []
         comments = Comment.objects.filter(commentPost=self.object)
         for i, comment in enumerate(comments):
             comment_user.append(f"{User.objects.filter(comment=comments[i])[0]}: '{comments[i]}'")
         context['comments'] = comment_user
+
+
+        # TODO: in progress
+        context['comments_text'] = Comment.objects.filter(commentPost=self.object).values_list('text', flat=True)
+        # context['commentPost'] = Comment.objects.filter(commentPost=self.object).values_list('commentPost', flat=True)
+        # context['commentUser'] = Comment.objects.filter(commentPost=self.object).values_list('commentUser', flat=True)
+
 
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)
@@ -95,7 +115,31 @@ class PostDetail(DetailView):
         pprint(context)
         print(f"self.object:{self.object}")
         print(f"**kwargs:{kwargs}")
+        print(f"**self.kwargs:{self.kwargs}")
+        print(f"**self.kwargs:{self.kwargs['id']}")
+        # check the cache in the console
+        print(cache.get(f'post-{self.kwargs["id"]}'))
+
         return context
+
+    # TODO: in progress
+    # def form_valid(self, form):
+    #     # comment = form.save(commit=False)
+    #     # comment.comment = Comment.objects.create(text=self.request.POST['comment_'],
+    #                       commentPost=Post.objects.get(id=self.object.id), commentUser=Author.objects.get(id=self.user.id).authorUser)
+    #     return super().form_valid(form)
+
+# TODO: in progress
+# set a comment function
+def comment_create(request,pk):
+    if request.method == 'POST':
+        Comment.objects.create(text=request.POST['comment_'],
+                               commentPost=Post.objects.get(id=pk),
+                               commentUser=User.objects.get(id=request.user.id))
+        return HttpResponseRedirect(f'/news/{pk}')
+    return render(request, 'news/comments.html')
+
+
 
     # def post(self):
     #     send_mail(
@@ -164,14 +208,21 @@ def create_post(request):
     author_list = Author.objects.all()
 
     # print(f"form: {form['author']}")
+    # print(f"form: {form}")
 
     # to show my time zone
     from django.utils import timezone
     print(f"timezone: {timezone.now()}")
 
+    # to avoid adding post for 'not authors'
+    if author_name_:                                # if user is an author
+        if str(user_) != str(author_name_[0]):      # if username is not equal author_name
+            return HttpResponseRedirect('../403/')  # 403
+    else:                                           # if user is not an author
+        return HttpResponseRedirect('../403/')      # 403
+
     if request.method == 'POST':
         form = PostForm(request.POST)
-
 
         if form.is_valid():
 
@@ -197,6 +248,7 @@ def create_post(request):
 
             return HttpResponseRedirect('/news') # the page will be after post save
 
+
     return render(request, 'news/post_edit.html', {
         'form': form,
         'user_is_author': user_is_author,
@@ -206,9 +258,12 @@ def create_post(request):
     })
 
 # author_create function
+@cache_page(30)  # to cash the page
 def author_create(request):
     user_id = request.user.id
     authors_list_id = Author.objects.all().values_list('authorUser', flat=True)
+    # user_group = request.user.groups.get()
+    # print(f"authors_group: {user_group}")
     if user_id not in authors_list_id:                        # if user is not an author
         author = Author.objects.create(authorUser_id=user_id) # create a new author
         authors_group = Group.objects.get(name="authors")     # put him in group 'authors'
@@ -216,6 +271,8 @@ def author_create(request):
         message = f"Congratulations! '{request.user}' has become an Author!"
     else:
         author = user_id
+        authors_group = Group.objects.get(name="authors")
+        request.user.groups.add(authors_group)
         message = f"'{request.user}' is already an Author!"
     return render(request, 'news/author_create.html', {'category': author, 'message': message})
 
@@ -232,28 +289,6 @@ def author_create(request):
 #         contentType = form.save(commit=False)
 #         contentType.contentType = 'news'
 #         return super().form_valid(form)
-
-
-
-# class AppointmentView(View):
-#     def get(self, request, *args, **kwargs):
-#         return render(request, 'news/post_edit.html', {})
-#
-#     def post(self, request, *args, **kwargs):
-#         appointment = Appointment(
-#             date=datetime.strptime(request.POST['date'], '%Y-%m-%d'),
-#             client_name=request.POST['client_name'],
-#             message=request.POST['message'],
-#         )
-#         appointment.save()
-#         send_mail(
-#             subject=f'Hello there',
-#             message='Hello, my friend!!!',
-#             from_email='NewsPortalSite@yandex.ru',
-#             recipient_list=['mr@victor-vetoshkin.ru']
-#         )
-#         send_mail.send()
-#         return redirect('appointments:post_edit')
 
 
 # page - /news/edit/
@@ -372,7 +407,7 @@ def subscribe(request, pk):
 
 
 
-# class IndexView(View):
+# class IndexView(View):   !celery!
 #     def get(self, request):
 #         # printer.delay(10)
 #         # printer.apply_async([10], countdown=5) # Параметр countdown устанавливает время (в секундах), через которое задача должна начать выполняться

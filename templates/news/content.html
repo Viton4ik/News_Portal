@@ -12,40 +12,45 @@
 news
 {% endblock title1 %}
 
-<!--topic-->
-{% block topic %}
-<h1 class="fw-bolder mb-1">{{ content.topic|censor }}</h1>
-{% endblock topic %}
+{% load cache %}
+    {% cache 3000 data %}
 
-<!--data-->
-{% block date %}
-{{ content.createTime.date }}
-{{ content.createTime.time }}
-{% endblock date %}
+        <!--topic-->
+        {% block topic %}
+            <h1 class="fw-bolder mb-1">{{ content.topic|censor }}</h1>
+        {% endblock topic %}
 
-<!--author-->
-{% block author %}
-{{ content.author }}
-{% endblock author %}
+        <!--data-->
+        {% block date %}
+        {{ content.createTime.date }}
+        {{ content.createTime.time }}
+        {% endblock date %}
 
-<!--contentType-->
-{% block type %}
-{{ content.contentType.title}}
-{% endblock type %}
+        <!--author-->
+        {% block author %}
+        {{ content.author }}
+        {% endblock author %}
 
-<!--Post category-->
-{% block categories %}
-    {% for category in categories %}
-           {{ category }}
-    {% endfor %}
-{% endblock categories %}
+        <!--contentType-->
+        {% block type %}
+        {{ content.contentType.title}}
+        {% endblock type %}
 
-<!--content-->
-{% block content %}
-<p></p>
-<p>{{ content.content|censor }}</p>
-<hr>
-{% endblock content %}
+        <!--Post category-->
+        {% block categories %}
+            {% for category in categories %}
+                   {{ category }}
+            {% endfor %}
+        {% endblock categories %}
+
+        <!--content-->
+        {% block content %}
+        <p></p>
+        <p>{{ content.content|censor }}</p>
+        <hr>
+        {% endblock content %}
+
+    {% endcache %}
 
 <!--comments-->
 {% block comment %}
@@ -76,5 +81,14 @@ news
 
 <!--edit_time post-->
 {% block edit_time %}
-    {{ content.editTime }}
+    {% load cache %}
+        {% cache 300 edit_time %}
+            {{ content.editTime }}
+        {% endcache %}
 {% endblock edit_time %}
+
+<!--add comment-->
+{% block add_comment %}
+    <p>&nbsp;</p>
+    <a href="./{{ content.pk }}/comments/"><button class="mt-3 btn-primary" type="button"> add comment</button></a>
+{% endblock add_comment %}
