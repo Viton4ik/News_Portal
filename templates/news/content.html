@@ -63,7 +63,9 @@ news
 
 <!--commentUser-->
 {% block commentUser %}
-{{ commentUser }}
+    {% for comment_ in comments_ %}
+              <p><em> - {{ comment_ }}</em></p>
+    {% endfor %}
 {% endblock commentUser %}
 
 <!--delete post-->

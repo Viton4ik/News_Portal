@@ -88,12 +88,13 @@ class PostDetail(DetailView):
             comment_user.append(f"{User.objects.filter(comment=comments[i])[0]}: '{comments[i]}'")
         context['comments'] = comment_user
 
-
         # TODO: in progress
-        context['comments_text'] = Comment.objects.filter(commentPost=self.object).values_list('text', flat=True)
+        # context['comments_text'] = Comment.objects.filter(commentPost=self.object).values_list('text', flat=True)
         # context['commentPost'] = Comment.objects.filter(commentPost=self.object).values_list('commentPost', flat=True)
-        # context['commentUser'] = Comment.objects.filter(commentPost=self.object).values_list('commentUser', flat=True)
-
+        # context['comments_queryset'] = Comment.objects.filter(commentPost=self.object).values_list('commentUser', 'text')#, 'createTime', 'rating')
+        # context['commentUser'] = list(Comment.objects.filter(commentPost=self.object).values_list('commentUser'))
+        # context['text'] = list(Comment.objects.filter(commentPost=self.object).values_list('text'))
+        # context['comments_'] = list(context['comments_queryset'])
 
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)
@@ -122,14 +123,7 @@ class PostDetail(DetailView):
 
         return context
 
-    # TODO: in progress
-    # def form_valid(self, form):
-    #     # comment = form.save(commit=False)
-    #     # comment.comment = Comment.objects.create(text=self.request.POST['comment_'],
-    #                       commentPost=Post.objects.get(id=self.object.id), commentUser=Author.objects.get(id=self.user.id).authorUser)
-    #     return super().form_valid(form)
 
-# TODO: in progress
 # set a comment function
 def comment_create(request,pk):
     if request.method == 'POST':
@@ -324,6 +318,7 @@ class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRe
         context['upd_is_author'] = context['upd_user_id'] == context['upd_author_id']
         context['author_name'] = str(*Author.objects.filter(authorUser_id=self.request.user.id)) if not self.request.user.is_superuser else f"Admin: <{self.request.user.username}>"
         context['author_list'] = list(Author.objects.all())
+        context['post_author'] = f"'created by '{self.get_object().author.authorUser}'"
 
         pprint(context)
         print(f"self.object:{self.object}")

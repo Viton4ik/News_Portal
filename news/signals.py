@@ -12,13 +12,14 @@ from django.shortcuts import render
 from .tasks import new_post_mailing
 
 
-@receiver(post_save, sender=Post) # insted of using post_save.connect(notify_post_create, sender=Post) after fuction
+@receiver(post_save, sender=Post) # instead of using post_save.connect(notify_post_create, sender=Post) after fuction
 def notify_post_create(sender, instance, created, **kwargs):
     # в зависимости от того, есть ли такой объект уже в базе данных или нет, тема письма будет разная
     if created:
         subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: User: '{instance.author}' created a new Post"
     else:
-        subject = f"'{instance.editTime.strftime('%H:%M:%S')} {instance.editTime.strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
+        # subject = f"'{instance.editTime.strftime('%H:%M:%S')} {instance.editTime.strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
+        subject = f"'{datetime.now().strftime('%H:%M:%S')} {datetime.now().strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
 
     mail_admins(
         subject=f"admin_notification: {subject}",
@@ -30,7 +31,8 @@ def notify_post_create(sender, instance, created, **kwargs):
 
 @receiver(post_delete, sender=Post)
 def notify_post_delete(sender, instance, **kwargs):
-    subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: {instance.author}'s post has been deleted"
+    # subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: {instance.author}'s post has been deleted"
+    subject = f"'{datetime.now().strftime('%H:%M:%S')} {datetime.now().strftime('%d-%m-%Y')}: {instance.author}'s post has been deleted"
     mail_admins(
         subject=subject,
         message=f"Title: '{instance.topic}'\n\n'{instance.content}'",
