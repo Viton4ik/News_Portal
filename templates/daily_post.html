@@ -7,7 +7,7 @@
 <body>
 <h2>Hello there! Here you can find new articles that have been added in the last week!</h2>
 <ul>
- <p>Your subscription in the following categories: {{ categories }}</p>
+ <p>Your subscription is in the following categories: {{ categories }}</p>
     {% for post in posts %}
     <li><a href="{{ link }}{{ post.get_absolute_url }}">{{ post.topic }}</a></li>
     {% endfor %}

@@ -19,7 +19,7 @@ def new_post_mailing(pk):
 
     subscribers = [s.email for s in subscribers]
 
-    category_list = post.values_list('postCategory__name', flat=True)
+    category_list = Post.objects.filter(pk=pk).values_list('postCategory__name', flat=True)
     for subscriber in subscribers:  # send e-mails for each subscriber separately
         html_content = render_to_string(
             'post_created_email.html',

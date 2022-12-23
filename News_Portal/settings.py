@@ -188,9 +188,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR / 'static']  ###
 
 # add Celery_redis
-CELERY_BROKER_URL = CELERY_BROKER_URL_            # указывает на URL брокера сообщений (Redis). По умолчанию он находится на порту 6379.
-CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND_    # указывает на хранилище результатов выполнения задач
+# CELERY_BROKER_URL = CELERY_BROKER_URL_            # указывает на URL брокера сообщений (Redis - web version). hidden.py
+# CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND_    # указывает на хранилище результатов выполнения задач (Redis - web version). hidden.py
+
+CELERY_BROKER_URL = 'redis://localhost:6379'        # указывает на URL брокера сообщений (Redis - linux version). По умолчанию он находится на порту 6379.
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'    # указывает на хранилище результатов выполнения задач (Redis - linux version)
+
 CELERY_ACCEPT_CONTENT = ['application/json']      # допустимый формат данных
 CELERY_TASK_SERIALIZER = 'json'                   # метод сериализации задач.
 CELERY_RESULT_SERIALIZER = 'json'                 # метод сериализации результатов.
+CELERY_TASK_TIME_LIMIT = 30 * 60                  # time limit for task processing
+
+
+# cache (files using)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'), # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
+        'TIMEOUT' : 30,                                   # 300 sec - default, 'none' -never
+        'OPTIONS': {
+            'MAX_ENTRIES': 200 # Максимальное количество элементов, разрешенное в кэше до удаления старых значений. Этот параметр установлен по 300 умолчанию.
+        }
+    }
+}
 

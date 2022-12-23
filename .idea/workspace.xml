@@ -2,34 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1bc3c51-7dda-4935-a061-d8ca1e1883b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/migrations/0003_post_edittime.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/403/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/news/news.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.flake8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mydata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/management/commands/categoryratingset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/management/commands/commentratingset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/management/commands/deletepostincategory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_post.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prepare.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/news/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/useful_django.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/News_Portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/News_Portal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DjangoShellCommand_D2.9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoShellCommand_D2.9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/celery.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/celery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/News_Portal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/News_Portal/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/News_Portal/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/News_Portal/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/account/email/email_confirmation_signup_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/account/email/email_confirmation_subject.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/account/email/email_confirmation_subject.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.bak" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.dir" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fpages/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/fpages/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/management/commands/runapscheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/management/commands/runapscheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/0002_rename_rating_author_authorrating_and_more.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/0002_rename_rating_author_authorrating_and_more.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/0003_post_edittime.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/0003_post_edittime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/migrations/0004_category_subscribers.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/0004_category_subscribers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/resources.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/resources.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/templatetags/custom_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/templatetags/custom_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/templatetags/custom_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/403/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/403/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/news/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/news/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/news/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/news/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/daily_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/daily_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/flatpages/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flatpages/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/flatpages/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/flatpages/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/author_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/author_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/category_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/category_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/post_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/news/post_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/post_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/news/subscribe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news/subscribe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post_created_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post_created_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +91,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HBrzNmkmyDBzZQIv9drBS06BCf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/DevProject/DjangoProjects/News_Portal"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Coding/Drafts/examples/Django" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +114,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667769580071</updated>
+      <workItem from="1669157515779" duration="3274000" />
+      <workItem from="1669198567250" duration="17681000" />
+      <workItem from="1669283219606" duration="20976000" />
+      <workItem from="1669366175588" duration="1540000" />
+      <workItem from="1669549510458" duration="4652000" />
+      <workItem from="1669557547543" duration="189000" />
+      <workItem from="1669557758482" duration="147000" />
+      <workItem from="1671386297842" duration="707000" />
+      <workItem from="1671531618467" duration="728000" />
+      <workItem from="1671571103844" duration="3279000" />
+      <workItem from="1671632083286" duration="5167000" />
+      <workItem from="1671828235203" duration="2102000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

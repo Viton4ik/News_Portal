@@ -5,3 +5,7 @@ News_Portal/hidden.py
 __pycache__
 
 db.sqlite3
+
+cache_files
+
+.env

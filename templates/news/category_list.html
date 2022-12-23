@@ -22,7 +22,7 @@ News List
     {% if is_not_subscriber %}
     <td><p style="text-align: center;"><a href="{% url 'subscribe' category.id %}"><button class="mt-3 btn-primary" type="button"> Subscribe</button></a></p></td>
     {% endif %}
-    <table style="width=1290">
+    <table style="width: 1290px">
         <tr>
             <td><em><p style="width: 645px; text-align: left;">Amount of news on the page: {{ category_news_list|length }} </p></em></td>
             <td><em><p style="width: 645px; text-align: right;">Total amount of news: {{  news_number }} </p></em></td>
