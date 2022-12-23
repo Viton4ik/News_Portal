@@ -3,11 +3,25 @@
 from django.contrib import admin
 from .models import Post, Author, Category, Comment, PostCategory
 
+
+def nullfy_authorRating(modeladmin, request, queryset):
+    queryset.update(authorRating=0)
+nullfy_authorRating.short_description = 'Обнулить рейтинг'
+
+def nullfy_rating_comment(modeladmin, request, queryset):
+    queryset.update(rating=0)
+nullfy_rating_comment.short_description = 'Обнулить рейтинг'
+
+def nullfy_rating_post(modeladmin, request, queryset):
+    queryset.update(rating=0)
+nullfy_rating_post.short_description = 'Обнулить рейтинг'
+
 # создаём новый класс для представления товаров в админке
 class CommentAdmin(admin.ModelAdmin):
     # list_display — это список или кортеж со всеми полями, которые мы хотим видеть в таблице
     # генерируем список имён всех полей для более красивого отображения
     list_display = [field.name for field in Comment._meta.get_fields()]
+    actions = [nullfy_rating_comment]
 
 
 class PostCategoryAdmin(admin.ModelAdmin):
@@ -16,19 +30,25 @@ class PostCategoryAdmin(admin.ModelAdmin):
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('authorUser', 'authorRating')
+    search_fields = ('authorUser',)
+    list_filter = ('authorUser', )
+    actions = [nullfy_authorRating]
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('subscribers')
+    search_fields = ('subscribers',)
 
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('topic', 'preview', 'contentType', 'author', 'createTime', 'rating', 'editTime')
+    list_filter = ('author', 'createTime', 'rating')  # добавляем примитивные фильтры в нашу админку
+    search_fields = ('author', 'topic')
+    actions = [nullfy_rating_post]
 
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(PostCategory, PostCategoryAdmin)
 
