@@ -18,7 +18,8 @@ def notify_post_create(sender, instance, created, **kwargs):
     if created:
         subject = f"'{instance.createTime.strftime('%H:%M:%S')} {instance.createTime.strftime('%d-%m-%Y')}: User: '{instance.author}' created a new Post"
     else:
-        subject = f"'{instance.editTime.strftime('%H:%M:%S')} {instance.editTime.strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
+        # subject = f"'{instance.editTime.strftime('%H:%M:%S')} {instance.editTime.strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
+        subject = f"'{datetime.now().strftime('%H:%M:%S')} {datetime.now().strftime('%d-%m-%Y')}: User: '{instance.author}' changed the Post"
 
     mail_admins(
         subject=f"admin_notification: {subject}",

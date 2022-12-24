@@ -318,6 +318,7 @@ class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRe
         context['upd_is_author'] = context['upd_user_id'] == context['upd_author_id']
         context['author_name'] = str(*Author.objects.filter(authorUser_id=self.request.user.id)) if not self.request.user.is_superuser else f"Admin: <{self.request.user.username}>"
         context['author_list'] = list(Author.objects.all())
+        context['post_author'] = f"'created by '{self.get_object().author.authorUser}'"
 
         pprint(context)
         print(f"self.object:{self.object}")

@@ -49,7 +49,7 @@ News List
    {% if news %}
        <table style="height: 24px; "width="1200">
 
-           <tr>
+           <tr style="background-color:{% cycle 'white' 'lightblue' %}">
                <td style="width: 400px; text-align: center;"><strong> Topic</strong> </td>
                <td style="width: 300px; text-align: center;"><strong> Post</strong> </td>
                <td style="width: 300px; text-align: center;"><strong> Category</strong> </td>
@@ -60,7 +60,7 @@ News List
            </tr>
 
            {% for news_ in news %}
-           <tr>
+           <tr style="background-color:{% cycle 'lightblue' 'white' %}">
                <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|truncatewords:4 }} </a></td>
                <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|truncatechars:20 }}</a></td>
 
