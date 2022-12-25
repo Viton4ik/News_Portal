@@ -1,5 +1,4 @@
 News_Portal/hidden.py
-prepare.txt
 
 root /.gitignore
 
@@ -16,14 +15,4 @@ cache_files
 **/.env
 News_Portal/.env
 
-.idea/workspace.xml
-
-.idea
-
-/.gitignore
-.gitignore_
-
-useful_django.txt
-
-
-test.py
+.gitignore
