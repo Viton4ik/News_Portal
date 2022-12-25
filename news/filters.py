@@ -44,8 +44,8 @@ class PostFilter(FilterSet):
         lookup_expr='gte',
         label='Creation date:',
         widget=DateTimeInput(
-            format='%Y-%m-%dT%H:%M',
-            attrs={'type': 'datetime-local'}, #attrs={'type': 'date'},
+            format='%Y-%m-%dT%H:%M', # there is no reaction on this!
+            attrs={'type': 'date'}, #attrs={'type': 'datetime-local'}, ,
         ),
     )
 

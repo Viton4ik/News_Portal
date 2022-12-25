@@ -61,8 +61,8 @@ News List
 
            {% for news_ in news %}
            <tr style="background-color:{% cycle 'lightblue' 'white' %}">
-               <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|truncatewords:4 }} </a></td>
-               <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|truncatechars:20 }}</a></td>
+               <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|forbidden|truncatewords:4 }} </a></td>
+               <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|forbidden|truncatechars:20 }}</a></td>
 
                <td>
                    {% for category in news_.postCategory.all %}

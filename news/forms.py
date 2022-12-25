@@ -36,7 +36,7 @@ class PostForm(forms.ModelForm):
 
         return cleaned_data
 
-    # doesn't work!!!
+    # FIXME: doesn't work!!!
     def clean_name(self):
         topic = self.cleaned_data["topic"]
         if topic[0].islower():

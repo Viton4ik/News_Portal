@@ -34,7 +34,7 @@ class PostList(ListView):
     template_name = 'news/news.html'
     context_object_name = 'news'
     # количество записей на странице
-    paginate_by = 8
+    paginate_by = 9
 
     # Переопределяем функцию получения списка
     def get_queryset(self):

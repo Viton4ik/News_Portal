@@ -17,7 +17,7 @@ news
 
         <!--topic-->
         {% block topic %}
-            <h1 class="fw-bolder mb-1">{{ content.topic|censor }}</h1>
+            <h1 class="fw-bolder mb-1">{{ content.topic|censor|forbidden }}</h1>
         {% endblock topic %}
 
         <!--data-->
@@ -46,7 +46,7 @@ news
         <!--content-->
         {% block content %}
         <p></p>
-        <p>{{ content.content|censor }}</p>
+        <p>{{ content.content|censor|forbidden }}</p>
         <hr>
         {% endblock content %}
 

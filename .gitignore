@@ -1,4 +1,7 @@
 News_Portal/hidden.py
+prepare.txt
+
+root /.gitignore
 
 **/__pycache__/
 
@@ -7,9 +10,20 @@ __pycache__
 db.sqlite3
 
 cache_files
+**/cache_files
 
 .env
+**/.env
+News_Portal/.env
 
 .idea/workspace.xml
 
 .idea
+
+/.gitignore
+.gitignore_
+
+useful_django.txt
+
+
+test.py
