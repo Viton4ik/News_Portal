@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+
+import django.utils.log
+
 from News_Portal.hidden import * #SECRET_KEY_DJANGO # to hid SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -210,5 +213,123 @@ CACHES = {
             'MAX_ENTRIES': 200 # Максимальное количество элементов, разрешенное в кэше до удаления старых значений. Этот параметр установлен по 300 умолчанию.
         }
     }
+}
+
+# D13.4
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'loggers': {
+        'django': {
+            'handlers': ['console_general', 'console_warning', 'console_error', 'general', 'news'],
+            'level': 'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['error', 'mail_admins'],
+            'level': 'DEBUG',
+        },
+        'django.server': {
+            'handlers': ['error', 'mail_admins'],
+            'level': 'DEBUG',
+        },
+        'django.template': {
+            'handlers': ['error'],
+            'level': 'DEBUG',
+        },
+        'django.db.backends': {
+            'handlers': ['error'],
+            'level': 'DEBUG',
+        },
+        'django.security': {
+            'handlers': ['security'],
+            'level': 'DEBUG',
+        },
+    },
+    'handlers': {
+        'console_general': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'console_general',
+            'filters': ['require_debug_true'],
+        },
+        'console_warning': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'console_warning',
+            'filters': ['require_debug_true'],
+        },
+        'console_error': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'console_error',
+            'filters': ['require_debug_true'],
+        },
+        'general': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'general.log',
+            'formatter': 'general',
+            'filters': ['require_debug_false'],
+        },
+        'error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'errors.log',
+            'formatter': 'console_error',
+        },
+        'security': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'security.log',
+            'formatter': 'general',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'console_warning',
+            'filters': ['require_debug_false'],
+        },
+        'news': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'news',
+        },
+    },
+    'formatters': {
+        'console_general': {
+            'format': '{levelname} {asctime}: "{message}"',
+            'style': '{',
+        },
+        'console_warning': {
+            'format': '{levelname} {asctime}: "{message}" - {pathname}',
+            'style': '{',
+
+        },
+        'console_error': {
+            'format': '{levelname} {asctime}: "{message}" - {pathname} -- {exc_info}',
+            'style': '{',
+
+        },
+        'general': {
+            'format': '{levelname} {asctime}: {module} - "{message}"',
+            'style': '{',
+
+        },
+        'news': {
+            'format': '{levelname} {asctime}: <<{module}>> - "{message}" -- <<{pathname}>>',
+            'style': '{',
+
+        },
+
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
 }
 

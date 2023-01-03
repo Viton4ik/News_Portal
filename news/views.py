@@ -21,11 +21,16 @@ from datetime import datetime, timedelta
 from django.core.cache import cache   # Кэширование на низком уровне
 from django.views.decorators.cache import cache_page # import cash decorator - @cache_page(60 * 15)
 
+import logging
 
+# logger = logging.getLogger(__name__)
+logger = logging.getLogger('news')
 
 class PostList(ListView):
     model = Post
     ordering = '-createTime'
+
+    logger.info('INFO')
 
     # or we can sort fields
     # queryset = Post.objects.filter(rating__gt=2)
