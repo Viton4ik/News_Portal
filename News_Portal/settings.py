@@ -14,7 +14,7 @@ from pathlib import Path
 
 import django.utils.log
 
-from News_Portal.hidden import * #SECRET_KEY_DJANGO # to hid SECRET_KEY
+from News_Portal.hidden import * #SECRET_KEY_DJANGO # to hide a SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 # the first page after Authentication
 LOGIN_REDIRECT_URL = "/news"
 # the first page after log out
-# LOGOUT_REDIRECT_URL = "/news"
 ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login"
 
 # use this for signals
@@ -55,7 +54,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = True # activate the username filed
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_VRIFICATION = 'mandatory' #ACCOUNT_EMAIL_VERIFICATION = 'none'
-# ACCOUNT_CONFIRM_EMAIL_ON_GET = True #позволит избежать дополнительных действий и активирует аккаунт сразу, как только мы перейдем по ссылке
 ACCOUNT_EMAIL_SUBJECT_PREFIX ='' # delete 'example.com' in subject
 
 ADMINS = [
@@ -175,7 +173,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = False#True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -191,8 +189,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR / 'static']  ###
 
 # add Celery_redis
-# CELERY_BROKER_URL = CELERY_BROKER_URL_            # указывает на URL брокера сообщений (Redis - web version). hidden.py
-# CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND_    # указывает на хранилище результатов выполнения задач (Redis - web version). hidden.py
 
 CELERY_BROKER_URL = 'redis://localhost:6379'        # указывает на URL брокера сообщений (Redis - linux version). По умолчанию он находится на порту 6379.
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'    # указывает на хранилище результатов выполнения задач (Redis - linux version)

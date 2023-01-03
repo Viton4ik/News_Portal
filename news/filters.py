@@ -1,11 +1,9 @@
 
 
 
-from django_filters import FilterSet, ModelChoiceFilter, ModelMultipleChoiceFilter, CharFilter, DateFromToRangeFilter, DateTimeFilter
+from django_filters import FilterSet, ModelChoiceFilter, CharFilter, DateTimeFilter
 from django.forms import DateTimeInput
 from .models import Post, Author, Category
-from django.forms import DateInput
-from django import forms
 
 
 # Создаем свой набор фильтров для модели Post.
@@ -22,15 +20,6 @@ class PostFilter(FilterSet):
         empty_label='any',
     )
 
-#### or like that
-    # author = ModelMultipleChoiceFilter(
-    #     field_name='author',
-    #     queryset=Author.objects.all(),
-    #     label='Author',
-    #     conjoined=True,
-    # )
-#####
-
     postCategory = ModelChoiceFilter(
         field_name='postCategory',
         queryset=Category.objects.all(),
@@ -44,21 +33,13 @@ class PostFilter(FilterSet):
         lookup_expr='gte',
         label='Creation date:',
         widget=DateTimeInput(
-            format='%Y-%m-%dT%H:%M', # there is no reaction on this!
-            attrs={'type': 'date'}, #attrs={'type': 'datetime-local'}, ,
+            format='%Y-%m-%dT%H:%M',
+            attrs={'type': 'date'},
         ),
     )
 
     class Meta:
        model = Post
        fields = {
-           # 'topic': ['contains'],
-           # 'author': ['exact'],
-           # 'postCategory': ['exact'],
-           # 'rating': ['contains'],
-           # 'createTime': [
-           #     'date__gte'],
-           #     'date__lte',
-           # ],
        }
 

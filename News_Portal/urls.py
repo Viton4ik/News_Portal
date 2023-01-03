@@ -17,12 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-# from news.views import IndexView
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('accounts/', include('django.contrib.auth.urls')),
-    # path("accounts/", include("accounts.urls")),              # our application
     path("accounts/", include("allauth.urls")),               # allauth
     path('pages/', include('django.contrib.flatpages.urls')),
     path('news/', include('news.urls')),

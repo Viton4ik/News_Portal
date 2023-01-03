@@ -20,9 +20,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'post_weekly_mailing_8am': {
         'task': 'news.tasks.week_mailing',
-        # 'schedule': 5,
         'schedule': crontab(hour=8, minute=0, day_of_week='monday'),
-        # 'args': (agrs),
     },
 }
 

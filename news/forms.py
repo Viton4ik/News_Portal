@@ -1,8 +1,7 @@
 
 from django import forms
-from .models import Post, Comment, Category, User, Author
+from .models import Post, Comment
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import User
 
 class PostForm(forms.ModelForm):
 
@@ -18,9 +17,6 @@ class PostForm(forms.ModelForm):
                   'postCategory',
               ]
 
-    # widgets = {
-    #     'author': forms.HiddenInput(),
-    # }
     def clean(self):
         cleaned_data = super().clean()
         topic = cleaned_data.get("topic")
@@ -54,6 +50,4 @@ class CommentForm(forms.ModelForm):
 
         fields = [
                   'text',
-                  # 'commentPost',
-                  # 'commentUser',
               ]

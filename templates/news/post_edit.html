@@ -20,7 +20,6 @@
        {% if user.is_superuser %}
        <p>Choose an Author: <select required name="author" id="id_author">
            <option value="" selected>{{ post_author }}</option>
-<!--            <option value="" selected>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
             {% for author in author_list %}
            <option value="{{ author }}">{{ author }}</option>
             {% endfor %}
@@ -29,7 +28,6 @@
         {% endif %}
        {{ form.as_p }}
 
-<!--       <input type='hidden' name="author" value="{{ form.author }}" />-->
        <input type="submit" value="Save" />
    </form>
 {% else %}

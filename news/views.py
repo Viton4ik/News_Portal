@@ -1,40 +1,31 @@
 
-from django.views.generic.edit import ModelFormMixin, SingleObjectMixin
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from pprint import pprint
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
-from .models import Post, Category, Comment, Author, PostCategory
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from .models import Post, Category, Comment, Author
 from django.contrib.auth.models import User
 from .filters import PostFilter
-from .forms import PostForm, CommentForm #AuthortForm
-from django.http import HttpResponseRedirect, HttpResponse
+from .forms import PostForm
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.core.mail import send_mail
-from django.views import View
 from django.contrib.auth.models import Group
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from django.core.cache import cache   # Кэширование на низком уровне
 from django.views.decorators.cache import cache_page # import cash decorator - @cache_page(60 * 15)
 
 import logging
 
-# logger = logging.getLogger(__name__)
-logger = logging.getLogger('news')
+logger = logging.getLogger(__name__)
 
 class PostList(ListView):
     model = Post
     ordering = '-createTime'
 
     logger.info('INFO')
-
-    # or we can sort fields
-    # queryset = Post.objects.filter(rating__gt=2)
-    # queryset = Product.objects.order_by('name')
 
     template_name = 'news/news.html'
     context_object_name = 'news'
@@ -81,10 +72,6 @@ class PostDetail(DetailView):
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
-        # to get comments
-        # context['comments'] = Comment.objects.filter(commentPost=self.object)
-        # to get comment_user - doesn't work properly!
-        # context['commentUser'] = User.objects.filter(comment=context['comments'][0])
 
         # FIXME: to get comments + username
         comment_user = []
@@ -92,14 +79,6 @@ class PostDetail(DetailView):
         for i, comment in enumerate(comments):
             comment_user.append(f"{User.objects.filter(comment=comments[i])[0]}: '{comments[i]}'")
         context['comments'] = comment_user
-
-        # TODO: in progress
-        # context['comments_text'] = Comment.objects.filter(commentPost=self.object).values_list('text', flat=True)
-        # context['commentPost'] = Comment.objects.filter(commentPost=self.object).values_list('commentPost', flat=True)
-        # context['comments_queryset'] = Comment.objects.filter(commentPost=self.object).values_list('commentUser', 'text')#, 'createTime', 'rating')
-        # context['commentUser'] = list(Comment.objects.filter(commentPost=self.object).values_list('commentUser'))
-        # context['text'] = list(Comment.objects.filter(commentPost=self.object).values_list('text'))
-        # context['comments_'] = list(context['comments_queryset'])
 
         # to get category
         context['categories'] = Category.objects.filter(post=self.object)
@@ -139,17 +118,6 @@ def comment_create(request,pk):
     return render(request, 'news/comments.html')
 
 
-
-    # def post(self):
-    #     send_mail(
-    #         subject=f'Hello there',
-    #         message='Hello, my friend!!!',
-    #         from_email='NewsPortalSite@yandex.ru',
-    #         recipient_list=['mr@victor-vetoshkin.ru']
-    #     )
-    #
-    #     return redirect('appointments:make_appointment')
-
 # add 403.html for def create_post
 def html_403(request):
     form = PostForm()
@@ -158,23 +126,6 @@ def html_403(request):
 # page - /news/create/
 @permission_required(perm='news.add_post', login_url=html_403) # @login_required(login_url=html_403)
 def create_post(request):
-    # form = PostForm()
-    # if request.method == 'POST':
-    #     form = PostForm(request.POST)
-    #     if form.is_valid():
-    #
-    #         # # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
-    #         # contentType = form.save(commit=False)
-    #         # contentType.contentType = 'news'
-    #
-    #         form.save()
-    #         return HttpResponseRedirect('/news') # the page will be after post save
-    #
-    # return render(request, 'news/post_edit.html', {'form' : form})
-
-
-
-
 
     form = PostForm()
 
@@ -184,9 +135,6 @@ def create_post(request):
     author_name = str(*Author.objects.filter(authorUser_id=request.user.id)) if not request.user.is_superuser else f"Admin: <{request.user.username}>"
     # check if the user is an author
     user_is_author = author_name == str(user_)
-
-    # check if admin
-    # if_admin_ = request.user.is_superuser
 
     # print an e-mail to check
     e_mail = request.user.email
@@ -206,9 +154,6 @@ def create_post(request):
     # get authors list
     author_list = Author.objects.all()
 
-    # print(f"form: {form['author']}")
-    # print(f"form: {form}")
-
     # to show my time zone
     from django.utils import timezone
     print(f"timezone: {timezone.now()}")
@@ -222,9 +167,7 @@ def create_post(request):
 
     if request.method == 'POST':
         form = PostForm(request.POST)
-
         if form.is_valid():
-
             # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
             author = form.save(commit=False)
             # if not an admin
@@ -234,19 +177,8 @@ def create_post(request):
                 # if admin - author has to be chosen
                 author_user = User.objects.get(username=request.POST['author'])
                 author.author = Author.objects.get(authorUser_id=author_user.id)
-
-            # send_mail(
-            #     subject=f"{request.POST['topic']}",
-            #     message=f"{request.POST['content']}",
-            #     from_email='NewsPortalSite@yandex.ru',
-            #     recipient_list=[f'{e_mail}'],
-            #     # fail_silent=False # - doesn't work with this feature
-            # )
-
             form.save()
-
             return HttpResponseRedirect('/news') # the page will be after post save
-
 
     return render(request, 'news/post_edit.html', {
         'form': form,
@@ -261,8 +193,6 @@ def create_post(request):
 def author_create(request):
     user_id = request.user.id
     authors_list_id = Author.objects.all().values_list('authorUser', flat=True)
-    # user_group = request.user.groups.get()
-    # print(f"authors_group: {user_group}")
     if user_id not in authors_list_id:                        # if user is not an author
         author = Author.objects.create(authorUser_id=user_id) # create a new author
         authors_group = Group.objects.get(name="authors")     # put him in group 'authors'
@@ -276,22 +206,8 @@ def author_create(request):
     return render(request, 'news/author_create.html', {'category': author, 'message': message})
 
 
-# # page - /news/create/
-# class PostCreate(CreateView):
-#     form_class = PostForm
-#     model = Post
-#     template_name = 'news/post_edit.html'
-#
-#     # переопределяем метод form_valid и устанавливаем поле модели равным 'post'.
-#     # Далее super().form_valid(form) запустит стандартный механизм сохранения, который вызовет form.save(commit=True)
-#     def form_valid(self, form):
-#         contentType = form.save(commit=False)
-#         contentType.contentType = 'news'
-#         return super().form_valid(form)
-
-
 # page - /news/edit/
-class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdate(PermissionRequiredMixin, UpdateView):
     # rights providing
     permission_required = ('news.change_post',)
 
@@ -332,7 +248,7 @@ class PostUpdate(PermissionRequiredMixin, UpdateView): #class PostUpdate(LoginRe
 
 
 # page - /news/delete/
-class PostDelete(PermissionRequiredMixin, DeleteView): # class PostDelete(LoginRequiredMixin, DeleteView):
+class PostDelete(PermissionRequiredMixin, DeleteView):
     # rights providing
     permission_required = ('news.delete_post',)
 
@@ -369,13 +285,6 @@ class PostSearch(ListView):
         pprint(context)
         return context
 
-# @login_required
-# def update_me(request):
-#     user = request.user
-#     authors_group = Group.objects.get(name='authors')
-#     if not request.user.group.filter(name='authors').exists():   #!!!!!!!!
-#         authors_group.user_set.add(user)
-#     return redirect('/news')
 
 class CategoryListView(ListView):
     model = Post
@@ -402,16 +311,3 @@ def subscribe(request, pk):
     category.subscribers.add(user)
     message = f"You have subscribed to the news in category:"
     return render(request, 'news/subscribe.html', {'category' : category, 'message': message})
-
-
-
-
-
-# class IndexView(View):   !celery!
-#     def get(self, request):
-#         # printer.delay(10)
-#         # printer.apply_async([10], countdown=5) # Параметр countdown устанавливает время (в секундах), через которое задача должна начать выполняться
-#         printer.apply_async([10],
-#                             eta = datetime.now() + timedelta(seconds=5)) # для реализации того же самого сдвига на 5 секунд мы можем получить текущее время и добавить timedelta, равное 5 секундам, чтобы получить datetime-объект момента через 5 секунд от текущего.
-#         hello.delay()
-#         return HttpResponse('Hello!')
