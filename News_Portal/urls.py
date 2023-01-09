@@ -26,4 +26,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),               # allauth
     path('pages/', include('django.contrib.flatpages.urls')),
     path('news/', include('news.urls')),
+    path('i18n/', include('django.conf.urls.i18n')), # подключаем встроенные эндопинты для работы с локализацией
 ]

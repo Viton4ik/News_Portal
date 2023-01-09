@@ -4,6 +4,9 @@ from .models import Post, Comment, Category, User, Author
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
+# translation function
+from django.utils.translation import gettext as _
+
 class PostForm(forms.ModelForm):
 
     class Meta:
@@ -12,10 +15,10 @@ class PostForm(forms.ModelForm):
 
         fields = [
                   # 'author',
-                  'topic',
-                  'content',
-                  'contentType',
-                  'postCategory',
+                  _('topic'),
+                  _('content'),
+                  _('contentType'),
+                  _('postCategory'),
               ]
 
     # widgets = {
@@ -53,7 +56,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
 
         fields = [
-                  'text',
+                  _('text'),
                   # 'commentPost',
                   # 'commentUser',
               ]

@@ -7,18 +7,21 @@ from .models import Post, Author, Category
 from django.forms import DateInput
 from django import forms
 
+# translation function
+from django.utils.translation import gettext as _
+
 
 # Создаем свой набор фильтров для модели Post.
 class PostFilter(FilterSet):
 
     topic = CharFilter(field_name='topic',
                        lookup_expr='contains',
-                       label='Topic:')
+                       label=_('Topic:'))
 
     author = ModelChoiceFilter(
         field_name='author',
         queryset=Author.objects.all(),
-        label='Author:',
+        label=_('Author:'),
         empty_label='any',
     )
 
@@ -34,7 +37,7 @@ class PostFilter(FilterSet):
     postCategory = ModelChoiceFilter(
         field_name='postCategory',
         queryset=Category.objects.all(),
-        label='Category:',
+        label=_('Category:'),
         empty_label='any',
     )
 
@@ -42,7 +45,7 @@ class PostFilter(FilterSet):
     createTime_filer = DateTimeFilter(
         field_name='createTime',
         lookup_expr='gte',
-        label='Creation date:',
+        label=_('Creation date:'),
         widget=DateTimeInput(
             format='%Y-%m-%dT%H:%M', # there is no reaction on this!
             attrs={'type': 'date'}, #attrs={'type': 'datetime-local'}, ,

@@ -21,6 +21,9 @@ from datetime import datetime, timedelta
 from django.core.cache import cache   # Кэширование на низком уровне
 from django.views.decorators.cache import cache_page # import cash decorator - @cache_page(60 * 15)
 
+# translation function
+from django.utils.translation import gettext as _
+
 import logging
 
 # logger = logging.getLogger(__name__)

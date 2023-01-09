@@ -58,3 +58,7 @@ python manage.py loaddata sampledata.xml
 # полная очистка базы данных, т. е. удаление всех данных из таблиц в ней
 python manage.py flush   # можно указать всё тот же параметр --database и очистить какую-то конкретную БД
 
+# translation function
+python manage.py makemessages -l <код языка*>
+python manage.py makemessages -l ru
+django-admin compilemessages 

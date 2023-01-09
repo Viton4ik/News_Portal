@@ -1,7 +1,11 @@
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% block title1 %}
-    {{ flatpage.title }}
+    {% trans "Information" as flatpage_title %} 
+    {#{ flatpage.title }#}
+    {{ flatpage_title }}
 {% endblock title1 %}
 
 {% block user_name %}
@@ -10,8 +14,10 @@
 
 {% block content %}
     {% load cache %}
-        {% cache 1000 content %}
-            {{ flatpage.content }}
+        {% cache 100 content %}
+            {% trans "Hello there!" as flatpage_content %}
+            {#{ flatpage.content }#} <!--option witout translation-->
+            {{ flatpage_content }}
             <hr>
         {% endcache %}
 {% endblock content %}

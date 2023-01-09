@@ -103,12 +103,18 @@ SITE_ID = 1 ### flatpages
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # Project localisation (connected with "locale" folder)
+    'django.middleware.locale.LocaleMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+
+    # flatpages
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware', 
 ]
 
 ROOT_URLCONF = 'News_Portal.urls'
@@ -250,7 +256,8 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'console_general',
-            'filters': ['require_debug_true'],
+            # 'filters': ['require_debug_true'],
+            'filters': ['require_debug_false'],
         },
         'console_warning': {
             'level': 'WARNING',
@@ -294,6 +301,7 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': 'debug.log',
             'formatter': 'news',
+            'filters': ['require_debug_false'],
         },
     },
     'formatters': {
@@ -333,3 +341,14 @@ LOGGING = {
     },
 }
 
+# Project localisation (connected with "locale" folder)
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
+
+# LANGUAGE_CODE = 'ru'
+
+LANGUAGES = [
+    ('en','English'),
+    ('ru','Русский')
+]

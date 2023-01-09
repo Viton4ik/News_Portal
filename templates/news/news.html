@@ -1,27 +1,30 @@
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% load custom_filters %} <!--Где сustom_filters — это название Python файла, который мы создали в папке news/templatetags/.-->
 
 {% load custom_tags %}
 
 {% block user_name %}
-'{{ user }}'
+    '{{ user }}'
 {% endblock user_name %}
 
 {% block title1 %}
-News List
+    {% trans "News List" %} 
 {% endblock title1 %}
 <!--{{ page_obj }}-->
 
 {% block content %}
-   <h1>News List</h1>
+   <h1>{% trans "News List" %}</h1>
 
-   <h3>{% current_time '%b %d %Y %A' %}</h3>
+   <h3>{#% current_time '%b %d %Y %A' %#}
+    {{ time_now|date:'M d Y l' }}</h3>
     <table style="width: 1290px">
         <tr>
-            <td><em><p style="width: 645px; text-align: left;">Amount of news on the page: {{ news|length }} </p></em></td>
-            <td><em><p style="width: 645px; text-align: right;">Total amount of news: {{  news_number }} </p></em></td>
+            <td><em><p style="width: 645px; text-align: left;">{% trans "Amount of news on the page" %}: {{ news|length }} </p></em></td>
+            <td><em><p style="width: 645px; text-align: right;">{% trans "Total amount of news" %}: {{  news_number }} </p></em></td>
         </tr>
     </table>
 
@@ -41,22 +44,22 @@ News List
 <!--        </form>-->
 <table>
     <tr>
-        <td><p style="width: 645px; text-align: left;"><a href="/news/create"><button class="mt-3 btn-primary" type="button"> Add News</button></a></p></td>
-        <td><p style="width: 645px; text-align: right;"><a href="/news/search"><button class="mt-3 btn-primary" type="button"> Detailed Search</button></a></p></td>
+        <td><p style="width: 645px; text-align: left;"><a href="/news/create"><button class="mt-3 btn-primary" type="button"> {% trans "Add News" %}</button></a></p></td>
+        <td><p style="width: 645px; text-align: right;"><a href="/news/search"><button class="mt-3 btn-primary" type="button"> {% trans "Detailed Search" %}</button></a></p></td>
     </tr>
 </table>
    <hr>
    {% if news %}
-       <table style="height: 24px; "width="1200">
+       <table style="height: 24px; "width="1300">
 
            <tr style="background-color:{% cycle 'white' 'lightblue' %}">
-               <td style="width: 400px; text-align: center;"><strong> Topic</strong> </td>
-               <td style="width: 300px; text-align: center;"><strong> Post</strong> </td>
-               <td style="width: 300px; text-align: center;"><strong> Category</strong> </td>
-               <td style="width: 200px; text-align: center;"><strong> Creating date </strong></td>
-               <td style="width: 100px; text-align: center;"><strong> Type</strong> </td>
-               <td style="width: 100px; text-align: center;"><strong> Author </strong></td>
-               <td style="width: 100px; text-align: center;"><strong> Rating</strong> </td>
+               <td style="width: 500px; text-align: center;"><strong> {% trans "Topic" %}</strong> </td>
+               <td style="width: 400px; text-align: center;"><strong> {% trans "Post" %}</strong> </td>
+               <td style="width: 300px; text-align: center;"><strong> {% trans "Category" %}</strong> </td>
+               <td style="width: 200px; text-align: center;"><strong> {% trans "Creating date" %} </strong></td>
+               <td style="width: 100px; text-align: center;"><strong> {% trans "Type" %}</strong> </td>
+               <td style="width: 100px; text-align: center;"><strong> {% trans "Author" %} </strong></td>
+               <td style="width: 100px; text-align: center;"><strong> {% trans "Rating" %}</strong> </td>
            </tr>
 
            {% for news_ in news %}
@@ -79,7 +82,7 @@ News List
         <caption>{{ time_now|date:'M d Y l' }}</caption>
         </table>
    {% else %}
-       <h2>No news</h2>
+       <h2>{% trans "No news" %}</h2>
    {% endif %}
 
   {# Добавляем пагинацию на страницу #}

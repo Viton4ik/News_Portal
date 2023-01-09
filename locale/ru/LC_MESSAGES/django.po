@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-09 23:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: fpages/admin.py:14
+msgid "Advanced options"
+msgstr "Детальные настройки"
+
+#: news/filters.py:19
+msgid "Topic:"
+msgstr "Тема:"
+
+#: news/filters.py:24
+msgid "Author:"
+msgstr "Автор:"
+
+#: news/filters.py:40
+msgid "Category:"
+msgstr "Категория:"
+
+#: news/filters.py:48
+msgid "Creation date:"
+msgstr "Дата создания:"
+
+#: news/forms.py:18
+msgid "topic"
+msgstr "Тема"
+
+#: news/forms.py:19
+msgid "content"
+msgstr "содержание"
+
+#: news/forms.py:20
+msgid "contentType"
+msgstr "тип"
+
+#: news/forms.py:21
+msgid "postCategory"
+msgstr "Категория"
+
+#: news/forms.py:59
+msgid "text"
+msgstr "текст"
+
+#: templates/flatpages/default.html:35 templates/news/default.html:21
+msgid "News Portal"
+msgstr "Новостной портал"
+
+#: templates/flatpages/default.html:45 templates/news/default.html:31
+msgid "Home"
+msgstr "Домой"
+
+#: templates/flatpages/default.html:46 templates/news/default.html:32
+msgid "(current)"
+msgstr "(текущий)"
+
+#: templates/flatpages/default.html:52 templates/news/default.html:38
+msgid "Sign Out"
+msgstr "Выйти"
+
+#: templates/flatpages/default.html:56 templates/news/default.html:42
+msgid "Sign In (Unauthorised user)"
+msgstr "Войти (Неавторизованный пользователь)"
+
+#: templates/flatpages/default.html:97 templates/news/default.html:159
+msgid "Copyright"
+msgstr "Все права защищены"
+
+#: templates/flatpages/default.html:97 templates/news/default.html:159
+msgid "Django Website 2022"
+msgstr "Django вебсайт 2022"
+
+#: templates/flatpages/info.html:6
+msgid "Information"
+msgstr "Информация"
+
+#: templates/flatpages/info.html:18
+msgid "Hello there!"
+msgstr "Приветствуем ваc на нашем сайте!"
+
+#: templates/news/content.html:14
+msgid "news"
+msgstr "Новостей нет"
+
+#: templates/news/content.html:59
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/news/content.html:80
+msgid "Delete Post"
+msgstr "Удалить пост"
+
+#: templates/news/content.html:81
+msgid "Edit Post"
+msgstr "Редактировать пост"
+
+#: templates/news/content.html:99
+msgid "Add Comment"
+msgstr "Добавить комментарий"
+
+#: templates/news/default.html:79 templates/news/news.html:15
+#: templates/news/news.html:20 templates/news/post_edit.html:11
+msgid "News List"
+msgstr "Доска новостей"
+
+#: templates/news/default.html:84
+msgid "Posted on"
+msgstr "Размещено"
+
+#: templates/news/default.html:89
+msgid "last edition"
+msgstr "Изменено"
+
+#: templates/news/default.html:94 templates/news/news.html:58
+msgid "Category"
+msgstr "Категория"
+
+#: templates/news/default.html:119
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/news/default.html:123
+msgid "Go"
+msgstr "Поиск"
+
+#: templates/news/default.html:129
+msgid "Categories"
+msgstr "Категория"
+
+#: templates/news/default.html:151
+msgid "Side Widget"
+msgstr "Виджет"
+
+#: templates/news/news.html:26
+msgid "Amount of news on the page"
+msgstr "Количество постов на странице"
+
+#: templates/news/news.html:27
+msgid "Total amount of news"
+msgstr "Общее количество постов"
+
+#: templates/news/news.html:47
+msgid "Add News"
+msgstr "Добавить пост"
+
+#: templates/news/news.html:48
+msgid "Detailed Search"
+msgstr "Детальный поиск"
+
+#: templates/news/news.html:56
+msgid "Topic"
+msgstr "Тема"
+
+#: templates/news/news.html:57
+msgid "Post"
+msgstr "Пост"
+
+#: templates/news/news.html:59
+msgid "Creating date"
+msgstr "Дата создания"
+
+#: templates/news/news.html:60
+msgid "Type"
+msgstr "Тип"
+
+#: templates/news/news.html:61 templates/news/post_edit.html:19
+msgid "Author"
+msgstr "Автор"
+
+#: templates/news/news.html:62
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: templates/news/news.html:85
+msgid "No news"
+msgstr "Новостей нет"
+
+#: templates/news/post_edit.html:10
+msgid "New Post"
+msgstr "Создать пост"
+
+#: templates/news/post_edit.html:12
+msgid "back"
+msgstr "назад"
+
+#: templates/news/post_edit.html:33
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/news/post_edit.html:38
+msgid "You have to become an Author to create posts"
+msgstr "Для создания постов необходимо стать Автором"
+
+#: templates/news/post_edit.html:39
+msgid "Become an Author"
+msgstr "Стать Автором"
