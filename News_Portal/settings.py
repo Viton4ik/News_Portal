@@ -341,7 +341,6 @@ LOGGING = {
     },
 }
 
-# Project localisation (connected with "locale" folder)
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')
 ]

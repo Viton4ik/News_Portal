@@ -20,7 +20,7 @@
 
        <!--       show author_list-->
        {% if user.is_superuser %}
-       <p>Choose an Author: <select required name="author" id="id_author">
+       <p>{% trans "Choose an Author" %}: <select required name="author" id="id_author">
            <option value="" selected>{{ post_author }}</option>
 <!--            <option value="" selected>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
             {% for author in author_list %}

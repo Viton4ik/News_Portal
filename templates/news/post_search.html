@@ -1,18 +1,20 @@
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% load custom_filters %}
 
 {% load custom_tags %}
 
 {% block user_name %}
-'{{ user }}'
+    '{{ user }}'
 {% endblock user_name %}
 
 {% block content %}
     <table>
         <tr>
-            <td><em><p style="width: 100px; text-align: left;"><a href="/news/" class="previous">&laquo; News List</a></p></em></td>
-            <td><h1><p style="width: 1150px;"><em>Detailed search:</em></h1></td>
+            <td><em><p style="width: 150px; text-align: left;"><a href="/news/" class="previous">&laquo; {% trans "News List" %}</a></p></em></td>
+            <td><h1><p style="width: 1100px;"><em>{% trans "Detailed search" %}:</em></h1></td>
         </tr>
     </table>
 
@@ -23,43 +25,53 @@
        {{ filterset.form.as_p }}
        {# Добавим кнопку отправки данных формы #}
 
-       <input type="submit" value="Поиск" />
+       {% trans "Save" as Save %} 
+       <input type="submit" value="{{ Save }}" />
    </form>
 <hr>
    <form action="" method="get">
        {# Button with an empty get-method to clean all filters #}
-       <input type="submit" value="Clean filters" />
+       {% trans "Clean filters" as сlean_filters %} 
+       <input type="submit" value="{{ сlean_filters }}" />
    </form>
 
    <hr>
    {% if news %}
-        <caption><em>News found: {{  news_number }}</em></caption>
-       <table style="height: 24px; "width="1200">
+        <caption><em>{% trans "News found" %}: {{  news_number }}</em></caption>
+       <table style="height: 24px; "width="1300">
 
-           <tr>
-               <td style="width: 400px; text-align: center;"><strong> Topic</strong> </td>
-               <td style="width: 300px; text-align: center;"><strong> Post</strong> </td>
-               <td style="width: 200px; text-align: center;"><strong> Creating date </strong></td>
-               <td style="width: 100px; text-align: center;"><strong> Type</strong> </td>
-               <td style="width: 100px; text-align: center;"><strong> Author </strong></td>
-               <td style="width: 100px; text-align: center;"><strong> Rating</strong> </td>
-           </tr>
+        <tr style="background-color:{% cycle 'white' 'lightblue' %}">
+            <td style="width: 500px; text-align: center;"><strong> {% trans "Topic" %}</strong> </td>
+            <td style="width: 400px; text-align: center;"><strong> {% trans "Post" %}</strong> </td>
+            <td style="width: 300px; text-align: center;"><strong> {% trans "Category" %}</strong> </td>
+            <td style="width: 200px; text-align: center;"><strong> {% trans "Creating date" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Type" %}</strong> </td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Author" %} </strong></td>
+            <td style="width: 100px; text-align: center;"><strong> {% trans "Rating" %}</strong> </td>
+        </tr>
 
            {% for news_ in news %}
-           <tr>
-               <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|truncatewords:4 }} </a></td>
-               <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|truncatechars:20 }}</a></td>
-               <td>{{ news_.createTime|date:'d M Y' }}</td>
-               <td>{{ news_.contentType }}</td>
-               <td>{{ news_.author }}</td>
-               <td>{{ news_.rating }}</td>
-           </tr>
+           <tr style="background-color:{% cycle 'lightblue' 'white' %}">
+            <td style="text-align: left;"> <a class="nav-link" href="/news/{{ news_.id }}"> {{ news_.topic|censor|forbidden|truncatewords:4 }} </a></td>
+            <td style="text-align: left;"><a class="nav-link" href="/news/{{ news_.id }}">{{ news_.content|censor|forbidden|truncatechars:20 }}</a></td>
+
+            <td>
+                {% for category in news_.postCategory.all %}
+                     <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+                {% endfor %}
+
+            </td>
+            <td>{{ news_.createTime|date:'d M Y' }}</td>
+            <td>{{ news_.contentType }}</td>
+            <td>{{ news_.author }}</td>
+            <td>{{ news_.rating }}</td>
+        </tr>
            {% endfor %}
 
         </table>
    {% else %}
 
-       <h2>No news</h2>
+       <h2>{% trans "No news" %}</h2>
    {% endif %}
 
 

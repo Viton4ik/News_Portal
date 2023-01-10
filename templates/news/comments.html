@@ -2,14 +2,16 @@
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
 
+{% load i18n %}
+
 {% load custom_filters %}
 
 {% block user_name %}
-'{{ user }}'
+  '{{ user }}'
 {% endblock user_name %}
 
 {% block title1 %}
-news
+  {% trans "news" %}
 {% endblock title1 %}
 
 
@@ -18,8 +20,9 @@ news
 {% block comment_ %}
   <form action="" method="post">
 {% csrf_token %}
-      <label for="comment_">Your comment:</label>
-        <input type="" name="comment_" value="" placeholder="Put your comment here" class="form-control" />
+{% trans "Put your comment here" as put %} 
+      <label for="comment_">{% trans "Your comment" %}:</label>
+        <input type="" name="comment_" value="" placeholder="{{ put }}" class="form-control" />
 <!--       {{ form.as_p }}-->
 <!--      <input type="submit" value="Save" />-->
 </form>

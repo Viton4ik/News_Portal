@@ -1,12 +1,14 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% trans "Title" %}</title>
 </head>
 <body>
-<h2>Hello there! New <a href="{{ link }}">article</a> has been added in subscribed category!</h2>
- <p>Your subscription in the following categories: {{ category_list }}</p>
+<h2>{% trans "Hello there! New" %} <a href="{{ link }}">{% trans "article" %}</a> {% trans "has been added in subscribed category" %}!</h2>
+ <p>{% trans "Your subscription in the following categories" %}: {{ category_list }}</p>
 <p>{{ text }}</p>
 </body>
 </html>

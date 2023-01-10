@@ -1,13 +1,15 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% trans "Title" %}</title>
 </head>
 <body>
-<h2>Hello there! Here you can find new articles that have been added in the last week!</h2>
+<h2>{% trans "Hello there! Here you can find new articles that have been added in the last week" %}!</h2>
 <ul>
- <p>Your subscription is in the following categories: {{ categories }}</p>
+ <p>{% trans "Your subscription is in the following categories" %}: {{ categories }}</p>
     {% for post in posts %}
     <li><a href="{{ link }}{{ post.get_absolute_url }}">{{ post.topic }}</a></li>
     {% endfor %}

@@ -871,3 +871,910 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: <ExtendsNode: extends 'flatpages/default.html'> must be the first tag in the template.
 ERROR 2023-01-09 22:02:27,599: ""GET /news/ HTTP/1.1" 500 154672" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:06:05,579: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?"), <traceback object at 0x7f10f043ad80>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:06:05,582: ""GET /news/categories/5 HTTP/1.1" 500 289538" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:06:19,454: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?"), <traceback object at 0x7f10f063fb80>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:06:19,457: ""GET /news/categories/5 HTTP/1.1" 500 289538" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:06:29,893: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?"), <traceback object at 0x7f10f0439300>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:06:29,894: ""GET /news/categories/5 HTTP/1.1" 500 287531" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:11:53,238: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?"), <traceback object at 0x7f10f077f640>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 954, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'trans', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:11:53,243: ""GET /news/categories/4 HTTP/1.1" 500 289710" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:20:51,600: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time2' received too many positional arguments"), <traceback object at 0x7f023a56c580>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 350, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 353, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'current_time2' received too many positional arguments
+ERROR 2023-01-10 14:20:51,603: ""GET /news/categories/5 HTTP/1.1" 500 286758" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:23:58,248: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time2' received too many positional arguments"), <traceback object at 0x7f023a374ac0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 350, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 353, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'current_time2' received too many positional arguments
+ERROR 2023-01-10 14:23:58,250: ""GET /news/categories/4 HTTP/1.1" 500 286743" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:25:17,368: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 23: 'current_time2|date:'M', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x7f023a34d6c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: "current_time2|date:'M"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'current_time2|date:'M', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:25:17,369: ""GET /news/categories/4 HTTP/1.1" 500 259535" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:29:30,946: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('datetime.date() takes no arguments (1 given)'), <traceback object at 0x7fb38b9797c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_tags.py", line 16, in current_time2
+    return datetime.utcnow().date('M d Y l')
+TypeError: datetime.date() takes no arguments (1 given)
+ERROR 2023-01-10 14:29:30,947: ""GET /news/categories/4 HTTP/1.1" 500 207355" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:30:45,035: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Could not find variable at start of |date:'M d Y l'."), <traceback object at 0x7f5b9334da00>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 347, in parse_bits
+    args.append(parser.compile_filter(bit))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 685, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not find variable at start of |date:'M d Y l'.
+ERROR 2023-01-10 14:30:45,037: ""GET /news/categories/4 HTTP/1.1" 500 296904" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:31:03,691: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 23: 'current_time2|date:'M', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x7f5b93384d00>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: "current_time2|date:'M"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'current_time2|date:'M', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:31:03,693: ""GET /news/categories/4 HTTP/1.1" 500 260752" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:31:32,733: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 23: 'current_time2|date', expected 'endblock'. Did you forget to register or load this tag?"), <traceback object at 0x7f5b921a9e00>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'current_time2|date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'current_time2|date', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2023-01-10 14:31:32,736: ""GET /news/categories/4 HTTP/1.1" 500 260588" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:32:27,812: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time2' received too many positional arguments"), <traceback object at 0x7f5b920d9600>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 350, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 353, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'current_time2' received too many positional arguments
+ERROR 2023-01-10 14:32:27,813: ""GET /news/categories/4 HTTP/1.1" 500 287579" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:32:55,721: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("'current_time2' received too many positional arguments"), <traceback object at 0x7f5b920fb480>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 350, in parse_bits
+    unhandled_params.pop(0)
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 130, in compile_func
+    args, kwargs = parse_bits(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 353, in parse_bits
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'current_time2' received too many positional arguments
+ERROR 2023-01-10 14:32:55,722: ""GET /news/categories/4 HTTP/1.1" 500 287552" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:34:27,238: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError("'datetime.date' object is not callable"), <traceback object at 0x7f801c48f280>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_tags.py", line 16, in current_time2
+    return (datetime.utcnow().date()) (datetime.utcnow().time())
+TypeError: 'datetime.date' object is not callable
+ERROR 2023-01-10 14:34:27,240: ""GET /news/categories/4 HTTP/1.1" 500 207399" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:36:01,988: "Internal Server Error: /news/categories/4" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('datetime.time() takes no arguments (1 given)'), <traceback object at 0x7ffbc539dec0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_tags.py", line 17, in current_time2
+    return datetime.utcnow().time('%H:%M:%S')
+TypeError: datetime.time() takes no arguments (1 given)
+ERROR 2023-01-10 14:36:01,989: ""GET /news/categories/4 HTTP/1.1" 500 207366" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:44:38,130: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('datetime.date() takes no arguments (1 given)'), <traceback object at 0x7f8a46327480>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_tags.py", line 16, in current_time2
+    return datetime.utcnow().date('%B %d %Y') #datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
+TypeError: datetime.date() takes no arguments (1 given)
+ERROR 2023-01-10 14:44:38,132: ""GET /news/categories/5 HTTP/1.1" 500 225079" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 14:45:18,190: "Internal Server Error: /news/categories/5" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('datetime.date() takes no arguments (1 given)'), <traceback object at 0x7fd52e61cc40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/library.py", line 237, in render
+    output = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_tags.py", line 16, in current_time2
+    return datetime.utcnow().date('today') #datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
+TypeError: datetime.date() takes no arguments (1 given)
+ERROR 2023-01-10 14:45:18,192: ""GET /news/categories/5 HTTP/1.1" 500 224936" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
