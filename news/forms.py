@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 # translation function
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _ #FIXME
 
 class PostForm(forms.ModelForm):
 
@@ -49,14 +49,15 @@ class PostForm(forms.ModelForm):
 
         return topic
 
-class CommentForm(forms.ModelForm):
+# TODO: I don't remember what is for...
+# class CommentForm(forms.ModelForm):
 
-    class Meta:
+#     class Meta:
 
-        model = Comment
+#         model = Comment
 
-        fields = [
-                  _('text'),
-                  # 'commentPost',
-                  # 'commentUser',
-              ]
+#         fields = [
+#                   _('text'),
+#                   # 'commentPost',
+#                   # 'commentUser',
+#               ]

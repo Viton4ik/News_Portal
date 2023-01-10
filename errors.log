@@ -1778,3 +1778,1536 @@ Traceback (most recent call last):
     return datetime.utcnow().date('today') #datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
 TypeError: datetime.date() takes no arguments (1 given)
 ERROR 2023-01-10 14:45:18,192: ""GET /news/categories/5 HTTP/1.1" 500 224936" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:11:13,276: "Internal Server Error: /news/163/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f692f5b7580>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:11:13,278: ""GET /news/163/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:11:47,266: "Internal Server Error: /news/155/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f692f5e8800>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:11:47,267: ""GET /news/155/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:13:01,973: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f692f541b80>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:13:01,975: ""GET /news/152/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:19:46,621: "Internal Server Error: /news/164/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7fb381fe4480>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:19:46,624: ""GET /news/164/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:22:28,484: "Internal Server Error: /news/159/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f803842ad40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:22:28,486: ""GET /news/159/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:25:28,548: "Internal Server Error: /news/163/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f80382a0700>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:25:28,549: ""GET /news/163/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:32:12,616: "Internal Server Error: /news/163/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f80395f05c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:32:12,619: ""GET /news/163/edit/ HTTP/1.1" 500 141551" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:42:18,951: "Internal Server Error: /news/163/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f1b712b5640>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:42:18,952: ""GET /news/163/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 15:58:31,518: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7ff274163ec0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 15:58:31,521: ""GET /news/152/edit/ HTTP/1.1" 500 141414" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:49:01,884: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f7595f92f00>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:49:01,885: ""GET /news/152/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:50:22,801: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7fc1ceb684c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:50:22,804: ""GET /news/152/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:50:37,877: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f790cd50980>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:50:37,879: ""GET /news/152/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:50:39,359: "Internal Server Error: /news/152/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f790cd6fd00>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:50:39,360: ""GET /news/152/edit/ HTTP/1.1" 500 141557" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:51:31,728: "Internal Server Error: /news/156/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f281c51b080>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:51:31,730: ""GET /news/156/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:52:55,726: "Internal Server Error: /news/156/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7f232f33ccc0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:52:55,727: ""GET /news/156/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:54:13,656: "Internal Server Error: /news/164/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7fa99ee58640>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:54:13,657: ""GET /news/164/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 20:58:57,005: "Internal Server Error: /news/164/edit/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'TypeError'>, TypeError('sequence item 0: expected str instance, __proxy__ found'), <traceback object at 0x7fcb2a208500>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 331, in get_context_data
+    pprint(context)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 174, in _format
+    rep = self._repr(object, context, level)
+  File "/usr/lib/python3.10/pprint.py", line 454, in _repr
+    repr, readable, recursive = self.format(object, context.copy(),
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 585, in _safe_repr
+    vrepr, vreadable, vrecur = self.format(
+  File "/usr/lib/python3.10/pprint.py", line 467, in format
+    return self._safe_repr(object, context, maxlevels, level)
+  File "/usr/lib/python3.10/pprint.py", line 628, in _safe_repr
+    rep = repr(object)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/forms/forms.py", line 162, in __repr__
+    "fields": ";".join(self.fields),
+TypeError: sequence item 0: expected str instance, __proxy__ found
+ERROR 2023-01-10 20:58:57,012: ""GET /news/164/edit/ HTTP/1.1" 500 141420" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 21:17:34,678: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_post.topic_en'), <traceback object at 0x7fc160cd1bc0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_post.topic_en
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/views.py", line 58, in get_context_data
+    context['news_number'] = len(Post.objects.all())
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_post.topic_en
+ERROR 2023-01-10 21:17:34,680: ""GET /news/ HTTP/1.1" 500 152117" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 21:27:01,615: "Internal Server Error: /admin/news/post/147/change/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.db.utils.OperationalError'>, OperationalError('database is locked'), <traceback object at 0x7fc1602f9300>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1893, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1225, in save_model
+    obj.save()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/models.py", line 87, in save
+    super().save(*args, **kwargs)      # сначала вызываем метод родителя, чтобы объект сохранился
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 812, in save
+    self.save_base(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 863, in save_base
+    updated = self._save_table(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 976, in _save_table
+    updated = self._do_update(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 1040, in _do_update
+    return filtered._update(values) > 0
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1215, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: database is locked
+ERROR 2023-01-10 21:27:01,618: ""POST /admin/news/post/147/change/ HTTP/1.1" 500 299147" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 21:57:53,189: "Internal Server Error: /admin/news/post/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: news_post.contentType_en'), <traceback object at 0x7f0f14d59300>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: news_post.contentType_en
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2068, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 376, in __len__
+    self._fetch_all()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1866, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 87, in __iter__
+    results = compiler.execute_sql(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1398, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 357, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: news_post.contentType_en
+ERROR 2023-01-10 21:57:53,190: ""GET /admin/news/post/ HTTP/1.1" 500 170832" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:11:45,000: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa974a57f40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:11:45,002: ""GET /news/?page=5 HTTP/1.1" 500 267809" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:13:25,725: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa9748cbd40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:13:25,726: ""GET /news/?page=5 HTTP/1.1" 500 267809" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:13:52,560: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa974ad9600>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:13:52,562: ""GET /news/?page=5 HTTP/1.1" 500 267031" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:13:59,597: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa97496ddc0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:13:59,599: ""GET /news/?page=5 HTTP/1.1" 500 267038" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:14:20,469: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa97498c1c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:14:20,471: ""GET /news/?page=5 HTTP/1.1" 500 267038" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:14:50,458: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa9748cadc0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:14:50,459: ""GET /news/?page=5 HTTP/1.1" 500 267156" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:15:30,781: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa97476db40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:15:30,783: ""GET /news/?page=5 HTTP/1.1" 500 267956" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:15:48,480: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa974b1a580>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:15:48,481: ""GET /news/?page=5 HTTP/1.1" 500 267175" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:30:48,732: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7fa9746944c0>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:30:48,733: ""GET /news/?page=5 HTTP/1.1" 500 267175" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:31:02,533: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7f1547ca1c40>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:31:02,535: ""GET /news/?page=5 HTTP/1.1" 500 267153" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:32:27,577: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7f1546be4280>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:32:27,582: ""GET /news/?page=5 HTTP/1.1" 500 267177" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None
+ERROR 2023-01-10 22:32:40,139: "Internal Server Error: /news/" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py -- (<class 'IndexError'>, IndexError('string index out of range'), <traceback object at 0x7f1546a0c800>)
+Traceback (most recent call last):
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 742, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/Project/News_Portal/news/templatetags/custom_filters.py", line 39, in forbidden
+    if word[-1] == '.' or word[-1] == ',':
+IndexError: string index out of range
+ERROR 2023-01-10 22:32:40,140: ""GET /news/?page=5 HTTP/1.1" 500 267016" - /home/ubuntuvm/DevProjects/DjangoProjects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py -- None

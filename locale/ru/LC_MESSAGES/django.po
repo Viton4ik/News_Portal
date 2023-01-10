@@ -62,17 +62,15 @@ msgstr "текст"
 
 #: templates/daily_post.html:7 templates/post_created_email.html:7
 msgid "Title"
-msgstr ""
+msgstr "Приветствуем, здесь вы найдете посты, добавленные за последнюю неделю"
 
 #: templates/daily_post.html:10
-msgid ""
-"Hello there! Here you can find new articles that have been added in the last "
-"week"
-msgstr ""
+msgid "Hello there! Here you can find new articles that have been added in the last week"
+msgstr "Приветствуем, здесь вы найдете посты, добавленные за последнюю неделю"
 
 #: templates/daily_post.html:12
 msgid "Your subscription is in the following categories"
-msgstr ""
+msgstr "Вы подписаны в следующих категориях"
 
 #: templates/flatpages/default.html:35 templates/news/default.html:21
 msgid "News Portal"

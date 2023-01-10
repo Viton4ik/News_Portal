@@ -62,3 +62,8 @@ python manage.py flush   # можно указать всё тот же пара
 python manage.py makemessages -l <код языка*>
 python manage.py makemessages -l ru
 django-admin compilemessages 
+
+# добавляем переодчик в админку
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py update_translation_fields

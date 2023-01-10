@@ -66,6 +66,9 @@ ADMINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # удобные переводы в моделях
+    'modeltranslation', # обязательно перед админом
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

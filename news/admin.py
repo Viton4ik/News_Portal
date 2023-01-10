@@ -3,6 +3,9 @@
 from django.contrib import admin
 from .models import Post, Author, Category, Comment, PostCategory
 
+# translation model
+from modeltranslation.admin import TranslationAdmin 
+
 
 def nullfy_authorRating(modeladmin, request, queryset):
     queryset.update(authorRating=0)
@@ -39,11 +42,21 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('subscribers',)
 
 
+# add translation area
+class CategoryAdmin(TranslationAdmin):
+    model = Category
+
+
 class PostAdmin(admin.ModelAdmin):
     list_display = ('topic', 'preview', 'contentType', 'author', 'createTime', 'rating', 'editTime')
     list_filter = ('author', 'createTime', 'rating')  # добавляем примитивные фильтры в нашу админку
     search_fields = ('author', 'topic')
     actions = [nullfy_rating_post]
+
+
+# add translation area
+class PostAdmin(TranslationAdmin):
+    model = Post
 
 
 admin.site.register(Post, PostAdmin)

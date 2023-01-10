@@ -32,7 +32,7 @@ def forbidden(word):
    word_list_adapted = []
    try:
       word_list = word.strip().split()
-      print(word_list)
+      # print(word_list)
       for word in word_list:
         check = True
         while check:

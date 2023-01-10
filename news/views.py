@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView, C
 from .models import Post, Category, Comment, Author, PostCategory
 from django.contrib.auth.models import User
 from .filters import PostFilter
-from .forms import PostForm, CommentForm #AuthortForm
+from .forms import PostForm #CommentForm #AuthortForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
 from django.core.mail import send_mail

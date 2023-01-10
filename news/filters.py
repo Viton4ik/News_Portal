@@ -8,7 +8,7 @@ from django.forms import DateInput
 from django import forms
 
 # translation function
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 
 # Создаем свой набор фильтров для модели Post.
